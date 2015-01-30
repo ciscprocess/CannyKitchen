@@ -1,48 +1,4 @@
-body {
-    background-color: #003d7a;
-}
 
-p {
-    color: #fff;
-}
-
-a {
-    color: #0085a1;
-}
-
-a:hover, a:focus {
-    color: #0085a1;
-}
-
-.navbar-custom {
-    background-color: rgba(255,255,255,0.3);
-    border-bottom: 1px solid transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-}
-
-.navbar-custom .navbar-brand {
-    color: #fff;
-}
-
-.navbar-custom .nav li a {
-    color: #fff;
-}
-
-.navbar-custom .nav li a:hover {
-    color: rgba(255,255,255,0.8);
-}
-
-.navbar-custom .navbar-brand:hover {
-    color: rgba(255,255,255,0.8);
-}
-
-.panel-default {
-    margin-top: 100px;
-}
 
 
 /*@media only screen and (min-width: 768px) {
