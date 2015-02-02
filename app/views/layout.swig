@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE-edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>cannykitchen - Home</title>
+		<title>{{ productName }} -- {{ title }}</title>
 
 		<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -15,7 +15,7 @@
 	</head>
 
 	<body>
-  {% block content %} {% endblock %}
+        {% block content %} {% endblock %}
 	</body>
 </html>
 
