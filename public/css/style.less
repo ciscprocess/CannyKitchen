@@ -1,13 +1,18 @@
+@import "../components/bootstrap/less/bootstrap.less";
+@import "../components/bootstrap/less/mixins/border-radius.less";
+
+@icon-font-path: "../components/bootstrap/fonts/";
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #003d7a;
 }
-
-a {
-  color: #00B7FF;
+.border-radius(@radius){
+  .border-top-radius(@radius);
+  .border-right-radius(@radius);
+  .border-bottom-radius(@radius);
+  .border-left-radius(@radius);
 }
-
 p {
   color: #fff;
 }
@@ -48,4 +53,23 @@ a:hover, a:focus {
 
 .panel-default {
   margin-top: 100px;
+}
+
+.error-container {
+  h1 {
+    color: #fff;
+  }
+
+  h2 {
+    color: #DDDDDD;
+  }
+
+  .glyphicon {
+    font-size: 50px;
+    color: red;
+  }
+  background-color: #0b97c4;
+  padding-left: 10px;
+  padding-right: 10px;
+  .border-radius( 5px );
 }

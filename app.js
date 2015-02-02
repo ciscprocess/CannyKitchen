@@ -1,7 +1,12 @@
 var express = require('express'),
-  config = require('./config/config'),
-  glob = require('glob'),
-  mongoose = require('mongoose');
+    config = require('./config/config'),
+    glob = require('glob'),
+    mongoose = require('mongoose'),
+    swig = require('swig');
+
+swig.setDefaults({
+    locals: { config: config }
+  });
 
 mongoose.connect(config.db);
 var db = mongoose.connection;

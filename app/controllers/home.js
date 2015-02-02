@@ -1,7 +1,8 @@
 var express = require('express'),
-  router = express.Router(),
-  mongoose = require('mongoose'),
-  Article = mongoose.model('Article');
+    router = express.Router(),
+    mongoose = require('mongoose'),
+    Article = mongoose.model('Article'),
+    extend = require('extend');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -16,14 +17,14 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/login', function (req, res, next) {
+router.get('/login', function (req, res) {
   res.render('login', {
     title: 'Login'
   });
 });
 
-router.get('/signup', function (req, res, next) {
+router.get('/signup', function (req, res) {
     res.render('signup', {
-        title: 'Signup'
+      title: 'Signup'
     });
 });

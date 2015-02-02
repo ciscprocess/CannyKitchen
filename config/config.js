@@ -6,28 +6,28 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'strap'
+      name: 'CannyKitchen'
     },
     port: 3000,
-    db: 'mongodb://localhost/strap-development'
+    db: 'mongodb://localhost/CannyKitchen-development'
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'strap'
+      name: 'CannyKitchen'
     },
     port: 3000,
-    db: 'mongodb://localhost/strap-test'
+    db: 'mongodb://localhost/CannyKitchen-test'
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'strap'
+      name: 'CannyKitchen'
     },
     port: 3000,
-    db: 'mongodb://localhost/strap-production'
+    db: 'mongodb://localhost/CannyKitchen-production'
   }
 };
 
