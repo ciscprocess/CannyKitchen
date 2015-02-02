@@ -26,6 +26,6 @@
         </div>
     </nav>
 
-    {% block loginContent %} {% endblock %}
+    {% block pageContent %} {% endblock %}
 
 {% endblock %}

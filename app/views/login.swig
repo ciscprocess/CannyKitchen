@@ -1,6 +1,6 @@
 {% extends 'index.swig' %}
 
-{% block loginContent %}
+{% block pageContent %}
 <!-- Login Form -->
 <div class="container">
     <div class="row">
@@ -29,7 +29,7 @@
                         <button type="submit" class="btn btn-default">Sign In</button>
                     </form>
                 </div>
-                <div class="panel-footer">Not Registered? <a href="register.html">Register here</a>
+                <div class="panel-footer">Not Registered? <a href="signup">Register here</a>
                 </div>
             </div>
         </div>
