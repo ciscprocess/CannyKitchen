@@ -1,0 +1,75 @@
+@import "../components/bootstrap/less/bootstrap.less";
+@import "../components/bootstrap/less/mixins/border-radius.less";
+
+@icon-font-path: "../components/bootstrap/fonts/";
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #003d7a;
+}
+.border-radius(@radius){
+  .border-top-radius(@radius);
+  .border-right-radius(@radius);
+  .border-bottom-radius(@radius);
+  .border-left-radius(@radius);
+}
+p {
+  color: #fff;
+}
+
+a {
+  color: #0085a1;
+}
+
+a:hover, a:focus {
+  color: #0085a1;
+}
+
+.navbar-custom {
+  background-color: rgba(255,255,255,0.3);
+  border-bottom: 1px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+.navbar-custom .navbar-brand {
+  color: #fff;
+}
+
+.navbar-custom .nav li a {
+  color: #fff;
+}
+
+.navbar-custom .nav li a:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+.panel-default {
+  margin-top: 100px;
+}
+
+.error-container {
+  h1 {
+    color: #fff;
+  }
+
+  h2 {
+    color: #DDDDDD;
+  }
+
+  .glyphicon {
+    font-size: 50px;
+    color: red;
+  }
+  background-color: #0b97c4;
+  padding-left: 10px;
+  padding-right: 10px;
+  .border-radius( 5px );
+}
