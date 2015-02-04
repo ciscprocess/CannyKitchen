@@ -19,7 +19,19 @@
                             <div class="col-md-9">
                                 <input type="text" class="form-control" name="email">
                             </div>
-                        </div>      
+                        </div>
+                        <div class="form-group">
+                             <label for="fname" class="col-md-3 control-label">First Name</label>
+                             <div class="col-md-9">
+                                <input type="text" class="form-control" name="fname">
+                             </div>
+                        </div>
+                        <div class="form-group">
+                             <label for="lname" class="col-md-3 control-label">Last Name</label>
+                             <div class="col-md-9">
+                                <input type="text" class="form-control" name="lname">
+                             </div>
+                        </div>
                         <div class="form-group">
                             <label for="username" class="col-md-3 control-label">Username</label>
                             <div class="col-md-9">
