@@ -39,21 +39,25 @@ module.exports = function(app, config) {
   if(app.get('env') === 'development'){
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
-      res.render('error', {
+      res.render('http-error', {
         message: err.message,
+        code: err.status || 500,
         error: err,
-        title: 'error'
+        title: 'Page Error',
+        humanMessage: 'We had trouble delivering this page for you. Please check the URL and try again.'
       });
     });
   }
 
   app.use(function (err, req, res, next) {
     res.status(err.status || 500);
-      res.render('error', {
-        message: err.message,
-        error: {},
-        title: 'error'
-      });
+    res.render('http-error', {
+      message: err.message,
+      code: err.status || 500,
+      error: {},
+      title: 'Page Error',
+      humanMessage: 'We had trouble delivering this page for you. Please check the URL and try again.'
+    });
   });
 
 };

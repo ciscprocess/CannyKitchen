@@ -3,5 +3,6 @@ var generate = function(periodLength, fitness) {
 
 };
 
-
-module.exports = generate;
+module.exports = {
+  generate: generate
+};

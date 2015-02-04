@@ -8,6 +8,12 @@ var config = {
     app: {
       name: 'CannyKitchen'
     },
+    provider: {
+      ingredient: {
+        apiKey: 'e7c4872c62',
+        urlTemplate: 'http://www.supermarketapi.com/api.asmx/%s?APIKEY=%s'
+      }
+    },
     port: 3000,
     db: 'mongodb://localhost/CannyKitchen-development'
   },

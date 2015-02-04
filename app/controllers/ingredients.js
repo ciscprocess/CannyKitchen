@@ -1,5 +1,6 @@
 var express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    ingredientProvider = require('../providers/ingredient-provider.js');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -7,6 +8,9 @@ module.exports = function (app) {
 
 router.get('/api/ingredients/keyword/:keyword', function (req, res) {
   var keyword = req.params.keyword;
+
+  ingredientProvider.byName(keyword);
+
   res.json({
     name: 'ingredient-1',
     term: keyword
