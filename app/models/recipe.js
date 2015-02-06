@@ -8,8 +8,8 @@ var RecipeSchema = new Schema({
   ingredients: Array,
   url: String,
   image: String,
-  duration: Number,
-  yield: Number,
+  duration: String,
+  yield: String,
   description: String
 });
 

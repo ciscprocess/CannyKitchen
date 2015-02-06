@@ -1,6 +1,10 @@
 'use strict';
 
-var request = require('request');
+var request = require('request'),
+    mongoose = require('mongoose'),
+    config = require('./config/config'),
+    glob = require('glob'),
+    fs = require('fs');
 
 module.exports = function (grunt) {
   // show elapsed time at the end
@@ -72,6 +76,47 @@ module.exports = function (grunt) {
           done(reloaded);
         });
     }, 500);
+  });
+
+  mongoose.connect(config.db);
+  var db = mongoose.connection;
+  db.on('error', function () {
+    throw new Error('unable to connect to database at ' + config.db);
+  });
+
+  var models = glob.sync(config.root + '/app/models/*.js');
+  models.forEach(function (model) {
+    require(model);
+  });
+
+  grunt.registerTask('seed-recipes', function() {
+    var Recipe = mongoose.model('Recipe');
+
+    var raw = fs.readFileSync('./config/recipeitems-latest.json').toString().split('\n');
+    console.log('Done loading!');
+    var counter = 0;
+    raw.forEach(
+        function (line) {
+          var rawRecipe = JSON.parse(line);
+          var recipe = new Recipe({
+            name: rawRecipe.name,
+            ingredients: rawRecipe.ingredients.split('\n'),
+            url: rawRecipe.url,
+            image: rawRecipe.image,
+            duration: rawRecipe.cookTime,
+            yield: rawRecipe.recipeYield,
+            description: rawRecipe.description || ''
+          });
+
+          recipe.save(function(err) {
+            if (err)
+              console.log('Error saving recipe: ' + err);
+
+            console.log('Completion: ' + (counter * 1.0) / raw.length);
+            counter++;
+          });
+        }
+    );
   });
 
   grunt.registerTask('default', [
