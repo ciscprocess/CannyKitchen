@@ -78,45 +78,55 @@ module.exports = function (grunt) {
     }, 500);
   });
 
-  mongoose.connect(config.db);
-  var db = mongoose.connection;
-  db.on('error', function () {
-    throw new Error('unable to connect to database at ' + config.db);
-  });
 
-  var models = glob.sync(config.root + '/app/models/*.js');
-  models.forEach(function (model) {
-    require(model);
-  });
 
   grunt.registerTask('seed-recipes', function() {
-    var Recipe = mongoose.model('Recipe');
+    var connection = mongoose.connect(config.db);
+    var db = mongoose.connection;
+    db.on('error', function () {
+      throw new Error('unable to connect to database at ' + config.db);
+    });
+
+    var models = glob.sync(config.root + '/app/models/*.js');
+    models.forEach(function (model) {
+      require(model);
+    });
+
+    var done = this.async();
+    var Recipe = connection.model('Recipe');
 
     var raw = fs.readFileSync('./config/recipeitems-latest.json').toString().split('\n');
-    console.log('Done loading!');
+
+
     var counter = 0;
-    raw.forEach(
-        function (line) {
-          var rawRecipe = JSON.parse(line);
-          var recipe = new Recipe({
-            name: rawRecipe.name,
-            ingredients: rawRecipe.ingredients.split('\n'),
-            url: rawRecipe.url,
-            image: rawRecipe.image,
-            duration: rawRecipe.cookTime,
-            yield: rawRecipe.recipeYield,
-            description: rawRecipe.description || ''
-          });
+    function iter() {
+      if (counter >= raw.length)
+      {
+        done(true);
+        return;
+      }
+      var rawRecipe = JSON.parse(raw[counter]);
+      var recipe = new Recipe({
+        name: rawRecipe.name,
+        ingredients: rawRecipe.ingredients.split('\n'),
+        url: rawRecipe.url,
+        image: rawRecipe.image,
+        duration: rawRecipe.cookTime,
+        yield: rawRecipe.recipeYield,
+        description: rawRecipe.description || ''
+      });
 
-          recipe.save(function(err) {
-            if (err)
-              console.log('Error saving recipe: ' + err);
+      recipe.save(function(err) {
+        if (err)
+          console.log('Error saving recipe: ' + err);
 
-            console.log('Completion: ' + (counter * 1.0) / raw.length);
-            counter++;
-          });
-        }
-    );
+        console.log('Completion: ' + (((counter * 1.0) / raw.length) * 100) + '%');
+        counter++;
+        iter();
+      });
+    };
+
+    iter();
   });
 
   grunt.registerTask('default', [
