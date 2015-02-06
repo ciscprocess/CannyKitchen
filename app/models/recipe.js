@@ -18,5 +18,9 @@ RecipeSchema.virtual('date')
     return this._id.getTimestamp();
   });
 
-mongoose.model('Recipe', RecipeSchema);
+var Recipe = mongoose.model('Recipe', RecipeSchema);
+
+Recipe.prototype.fromWebCall = function() {
+  console.log('It worked, though!');
+};
 

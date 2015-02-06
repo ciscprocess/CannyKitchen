@@ -1,6 +1,8 @@
 var express = require('express'),
     router = express.Router(),
-    ingredientProvider = require('../providers/ingredient-provider.js');
+    ingredientProvider = require('../providers/ingredient-provider.js'),
+    mongoose = require('mongoose'),
+    Recipe = mongoose.model('Recipe');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -8,7 +10,7 @@ module.exports = function (app) {
 
 router.get('/api/ingredients/keyword/:keyword', function (req, res) {
   var keyword = req.params.keyword;
-
+  Recipe.fromWebCall();
   ingredientProvider.byName(keyword).then(function(ingredients) {
     res.json(ingredients);
   });
