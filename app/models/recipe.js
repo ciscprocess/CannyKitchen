@@ -10,7 +10,8 @@ var RecipeSchema = new Schema({
   image: String,
   duration: String,
   yield: String,
-  description: String
+  description: String,
+  selectionToken: Number
 });
 
 RecipeSchema.virtual('date')

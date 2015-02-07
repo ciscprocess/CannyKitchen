@@ -11,7 +11,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">cannykitchen</a>
+                <a class="navbar-brand" href="/">CannyKitchen</a>
             </div>
 
             <div class="collapse navbar-collapse" id="navbar-collapse1">
@@ -26,6 +26,24 @@
         </div>
     </nav>
 
-    {% block pageContent %} {% endblock %}
+    {% block pageContent %}
+    <div class="home-pane container">
+        <h1>
+            Best of Welcomes to CannyKitchen!
+        </h1>
+        <h2>
+            Mission
+        </h2>
+        <p>
+            We hope to help the poor saps stuck in cooking hell.
+        </p>
+        <h2>
+            Status
+        </h2>
+        <p>
+            Only basic features have been implemented.
+        </p>
+    </div>
+    {% endblock %}
 
 {% endblock %}

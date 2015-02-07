@@ -100,12 +100,13 @@ module.exports = function (grunt) {
 
     var counter = 0;
     function iter() {
-      if (counter >= raw.length)
-      {
+      if (counter >= raw.length) {
         done(true);
         return;
       }
+
       var rawRecipe = JSON.parse(raw[counter]);
+
       var recipe = new Recipe({
         name: rawRecipe.name,
         ingredients: rawRecipe.ingredients.split('\n'),
@@ -113,12 +114,14 @@ module.exports = function (grunt) {
         image: rawRecipe.image,
         duration: rawRecipe.cookTime,
         yield: rawRecipe.recipeYield,
-        description: rawRecipe.description || ''
+        description: rawRecipe.description || '',
+        selectionToken: Math.random()
       });
 
       recipe.save(function(err) {
-        if (err)
+        if (err) {
           console.log('Error saving recipe: ' + err);
+        }
 
         console.log('Completion: ' + (((counter * 1.0) / raw.length) * 100) + '%');
         counter++;
