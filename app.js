@@ -2,7 +2,9 @@ var express = require('express'),
     config = require('./config/config'),
     glob = require('glob'),
     mongoose = require('mongoose'),
-    swig = require('swig');
+    swig = require('swig'),
+    bodyParser = require('body-parser'),
+    bcrypt = require('bcrypt');
 
 swig.setDefaults({
     locals: { config: config }
