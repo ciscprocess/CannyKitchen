@@ -1,17 +1,17 @@
 {% extends 'layout.swig' %}
 
 {% block content %}
-    <div class="jumbotron error-container">
-        <div>
-            <h1 style="display: inline-block;">HTTP {{ code }}: Page not found!</h1>
-            <span style="margin-left: 15px; font-size: 50px;" class="glyphicon glyphicon-thumbs-down"></span>
+    <div class="container">
+        <div class="jumbotron error-container">
+            <div>
+                <h1 style="display: inline-block;">HTTP {{ code }}: {{ message }}!   :'(</h1>
+            </div>
+
+            <br />
+
+            <p>
+                {{ humanMessage }}
+            </p>
         </div>
-
-        <br />
-
-        <p>
-            {{ humanMessage }}
-        </p>
     </div>
-
 {% endblock %}

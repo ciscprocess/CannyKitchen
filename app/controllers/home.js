@@ -28,3 +28,9 @@ router.get('/signup', function (req, res) {
       title: 'Signup'
     });
 });
+
+router.get('/about', function(req, res) {
+  res.render('about', {
+    title: 'About'
+  });
+});

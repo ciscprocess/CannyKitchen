@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="/about">About</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="login">Login</a></li>
                     <!-- <li><a href="signup.html">Signup</a></li> -->
@@ -27,23 +27,11 @@
     </nav>
 
     {% block pageContent %}
-    <div class="home-pane container">
-        <h1>
-            Best of Welcomes to CannyKitchen!
-        </h1>
-        <h2>
-            Mission
-        </h2>
-        <p>
-            We hope to help the poor saps stuck in cooking hell.
-        </p>
-        <h2>
-            Status
-        </h2>
-        <p>
-            Only basic features have been implemented.
-        </p>
-    </div>
+        <div class="container main-container">
+            Hmmm, it seems that you haven't a meal plan yet. Clicking below can remedy that!
+            <br />
+            <a class="btn btn-default" href="/recipes/0/7">Generate Meal Plan!</a>
+        </div>
     {% endblock %}
 
 {% endblock %}
