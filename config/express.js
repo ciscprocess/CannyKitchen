@@ -10,7 +10,7 @@ var methodOverride = require('method-override');
 var swig = require('swig');
 
 module.exports = function(app, config) {
-  app.engine('swig', swig.renderFile)
+  app.engine('swig', swig.renderFile);
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'swig');
 

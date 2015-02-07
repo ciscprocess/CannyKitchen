@@ -1,10 +1,8 @@
 var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
-    Article = mongoose.model('Article'),
     User = mongoose.model('User'),
     extend = require('extend'),
-    bodyParser = require('body-parser'),
     swig = require('swig'),
     bcrypt = require('bcrypt');
 
@@ -15,11 +13,8 @@ module.exports = function (app) {
 swig.setDefaults({ cache: false });
 
 router.get('/', function (req, res, next) {
-  Article.find(function (err, articles) {
-    if (err) return next(err);
-    res.render('index', {
-      title: 'Home'
-    });
+  res.render('index', {
+    title: 'Home'
   });
 });
 
@@ -32,7 +27,7 @@ router.get('/login', function (req, res) {
 router.post('/login', function (req, res) {
   var email = req.body.email;
   var pw = req.body.password;
-  var hash = bcrypt.hashSync(pw, 10);
+
   User.findOne({'email' : email}, function (err, user) {
     if (user) {
       bcrypt.compare(pw, user.password, function (err, match) {
@@ -66,8 +61,8 @@ router.post('/signup', function (req, res) {
       res.render('signup', {alert: "yes", msg: "Passwords do not match."});
     } else {
       var hash = bcrypt.hashSync(pw, 10);
-      var newuser = new User({username: username, email: email, password: hash});
-      newuser.save(function (err) {
+      var newUser = new User({username: username, email: email, password: hash});
+      newUser.save(function (err) {
         if (err) res.send('Error.');
             res.send('Success.');
       });

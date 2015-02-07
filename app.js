@@ -2,13 +2,13 @@ var express = require('express'),
     config = require('./config/config'),
     glob = require('glob'),
     mongoose = require('mongoose'),
-    swig = require('swig'),
-    bodyParser = require('body-parser'),
-    bcrypt = require('bcrypt');
+    swig = require('swig');
 
 swig.setDefaults({
-    locals: { config: config }
-  });
+    locals: {
+      config: config
+    }
+});
 
 mongoose.connect(config.db);
 var db = mongoose.connection;
@@ -17,9 +17,11 @@ db.on('error', function () {
 });
 
 var models = glob.sync(config.root + '/app/models/*.js');
+
 models.forEach(function (model) {
   require(model);
 });
+
 var app = express();
 
 require('./config/express')(app, config);
