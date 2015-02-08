@@ -27,15 +27,8 @@
     </nav>
 
     {% block pageContent %}
-        <div class="container main-container">
-            <h1>
-                CannyKitchen
-            </h1>
-            <p>
-                Hmmm, it seems that you haven't a meal plan yet. Clicking below can remedy that!
-            </p>
-            <br />
-            <a class="btn btn-default" href="/recipes/0/7">Generate Meal Plan!</a>
+        <div class="container main-container" ng-app="recipeViewerApp">
+            <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
         </div>
     {% endblock %}
 

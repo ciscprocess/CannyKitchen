@@ -1,0 +1,30 @@
+<div ng-controller="RecipeViewerController">
+
+    <h1>
+        CannyKitchen
+    </h1>
+    <span ng-if="!recipes.length">
+        <p>
+            Hmmm, it seems that you haven't a meal plan yet. Clicking below can remedy that!
+        </p>
+        <br />
+    </span>
+
+    <div ng-if="recipes.length" class="recipes-container">
+        <table>
+            <tr>
+                <td ng-repeat="recipe in recipes">
+                    <div class="well" style="margin-right: 2px;">
+                        Day {{ $index }}
+                    </div>
+                    <div class="well" style="height: 200px; margin-top: -19px; margin-right: 2px;">
+                        <img class="recipe-thumbnail" ng-src="{{recipe.image}}"/>
+                        <br />
+                        <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <a class="btn btn-default" ng-click="fetchRecipes()">Generate Meal Plan!</a>
+</div>

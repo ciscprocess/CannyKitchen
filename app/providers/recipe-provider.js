@@ -34,7 +34,10 @@ var requestRandom = function(howMany) {
     Recipe.find({
       $query: {
       }
-    }).skip(skip).limit(howMany).exec(function(error, recipes) {
+    }).skip(skip)
+      .limit(howMany)
+      .lean()
+      .exec(function(error, recipes) {
       if (error || !recipes) {
         deferred.reject('Error in requestRandom');
       } else {

@@ -1,5 +1,3 @@
-// Example model
-
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
@@ -20,8 +18,3 @@ RecipeSchema.virtual('date')
   });
 
 var Recipe = mongoose.model('Recipe', RecipeSchema);
-
-Recipe.prototype.fromWebCall = function() {
-  console.log('It worked, though!');
-};
-
