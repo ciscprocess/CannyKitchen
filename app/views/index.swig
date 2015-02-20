@@ -19,11 +19,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="#">Contact</a></li>
-                    {% if name %}
-                        <li><a href="logout">Logout</a></li>
-                    {% else %}
-                        <li><a href="login">Login</a></li>
-                    {% endif %}
+                    <li><a href="login">Login</a></li>
                     <!-- <li><a href="signup.html">Signup</a></li> -->
                 </ul>
             </div>
@@ -32,11 +28,9 @@
 
     {% block pageContent %}
         <div class="container main-container">
-            {% if name %}
-                <h1>Hello {{name}}!</h1>
-            {% else %}
-                <h1>CannyKitchen</h1>
-            {% endif %}
+            <h1>
+                CannyKitchen
+            </h1>
             <p>
                 Hmmm, it seems that you haven't a meal plan yet. Clicking below can remedy that!
             </p>
