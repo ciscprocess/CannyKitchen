@@ -20,9 +20,9 @@
                     <!-- Login Form -->
                     <form method="post" action="/login" class="form-horizontal">
                         <div class="form-group">
-                            <label class="col-md-3 control-label">Username</label>
+                            <label class="col-md-3 control-label">Email</label>
                             <div class="col-md-9">
-                                <input type="string" class="form-control" id="username" name="username" required="">
+                                <input type="email" class="form-control" id="email" name="email" required="">
                             </div>
                         </div>
                         <div class="form-group">

@@ -2,6 +2,7 @@ var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
     User = mongoose.model('User'),
+    extend = require('extend'),
     swig = require('swig'),
     bcrypt = require('bcrypt');
 var sess;
