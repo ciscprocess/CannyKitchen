@@ -7,4 +7,5 @@ angular.module('recipeViewerApp').controller('RecipeViewerController', function(
           $scope.recipes = data;
         });
   };
+
 });

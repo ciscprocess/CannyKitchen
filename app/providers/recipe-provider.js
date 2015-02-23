@@ -41,7 +41,6 @@ var requestRandom = function(howMany) {
       if (error || !recipes) {
         deferred.reject('Error in requestRandom');
       } else {
-        //var index = _.random(0, recipes.length - 1);
         recipes.forEach(function(recipe) {
           recipe.image = (recipe.image || '')
               .replace('http://static.tastykitchen.com/recipes/files/',

@@ -38,7 +38,7 @@ router.post('/login', function (req, res) {
         }
       });
     } else {
-      res.render('login', {alert: "yes"});
+      res.render('login', { alert: "yes" });
     }
   });
 });

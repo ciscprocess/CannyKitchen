@@ -18,9 +18,13 @@
                         Day {{ $index }}
                     </div>
                     <div class="well" style="height: 200px; margin-top: -19px; margin-right: 2px;">
-                        <img class="recipe-thumbnail" ng-src="{{recipe.image}}"/>
+                        <img class="recipe-thumbnail" ng-src="{{ recipe.image }}"/>
                         <br />
                         <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
+
+                        <ul>
+                            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
+                        </ul>
                     </div>
                 </td>
             </tr>
