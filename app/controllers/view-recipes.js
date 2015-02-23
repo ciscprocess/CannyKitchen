@@ -6,12 +6,14 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/api/generate-recipes/:start/:end', function (req, res) {
+router.get('/view-recipes/:start/:end', function (req, res) {
   var start = parseInt(req.params.start),
       end = parseInt(req.params.end);
 
   generator.generate(end - start, 0).then(function(recipes) {
-
-    res.json(recipes);
+    res.render('view-recipes', {
+      recipes: recipes,
+      start: start
+    });
   });
 });

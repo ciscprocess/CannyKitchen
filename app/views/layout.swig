@@ -9,8 +9,11 @@
 
 		<link rel="stylesheet" href="/css/style.css">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="/components/jquery/dist/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/components/angular/angular.js"></script>
+        <script src="/recipeViewerApp/config.js"></script>
+        <script src="/recipeViewerApp/recipeViewer/RecipeViewerController.js"></script>
 	</head>
 
 	<body>

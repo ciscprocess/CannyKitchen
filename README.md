@@ -23,7 +23,7 @@ This installs all necessary packages for the node.js server.
 ### Install Bower Packages
 This is as easy as the last step.
 
-	bower install bootstrap
+	bower install
 
 ### Seed the Database
 This step shouldn't be necessary for Sprint 1, since the remote database is by default used. If, however, you wish to use a local MongoDB instance, run the following before attempting to run the application:

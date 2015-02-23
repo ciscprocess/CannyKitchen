@@ -6,3 +6,4 @@ public/components/
 node_modules/.bin/swig
 
 node_modules/body-parser/index.js
+*.css

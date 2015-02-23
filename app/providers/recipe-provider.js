@@ -34,11 +34,13 @@ var requestRandom = function(howMany) {
     Recipe.find({
       $query: {
       }
-    }).skip(skip).limit(howMany).exec(function(error, recipes) {
+    }).skip(skip)
+      .limit(howMany)
+      .lean()
+      .exec(function(error, recipes) {
       if (error || !recipes) {
         deferred.reject('Error in requestRandom');
       } else {
-        //var index = _.random(0, recipes.length - 1);
         recipes.forEach(function(recipe) {
           recipe.image = (recipe.image || '')
               .replace('http://static.tastykitchen.com/recipes/files/',
