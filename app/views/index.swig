@@ -1,8 +1,11 @@
 {% extends 'layout.swig' %}
 {% block content %}
 <aside class="sidebar">
+    <div class="intro">
+        <p>Search the ingredients you have and plan to use at the search bar. It will then add the ingredients to the box below.</p>
+    </div>
     <div class="content">
-        <p>Search for your ingredients</p>
+        <p>Search for your ingredients:</p>
         <div id="search">
             <form id="search" action="">
                 <input id="search" type="text" placeholder="Search">
@@ -11,9 +14,9 @@
         </div>
     </div>
     <div class="list">
-        <p>Ingredients</p>
+        <p>Ingredients:</p>
         <form action="box.asp">
-            <select name="ingredients" multiple="multiple" size=10 width=300 STYLE="width: 360px">
+            <select name="ingredients" multiple="multiple" size=10 width=200 STYLE="width: 200px">
                 <option value="input">empty</option>
                 <option value="input">empty</option>
                 <option value="input">empty</option>
@@ -26,6 +29,9 @@
                 <option value="input">empty</option>
             </select>
         </form>
+    </div>
+    <div class="description">
+        <p>After putting all your ingredients, click the generate button to receive your available recipes. It's simple as that.</p>
     </div>
 </aside>
     <!-- Navigation -->
