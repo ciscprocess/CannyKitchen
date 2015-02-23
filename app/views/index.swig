@@ -1,5 +1,33 @@
 {% extends 'layout.swig' %}
 {% block content %}
+<aside class="sidebar">
+    <div class="content">
+        <p>Search for your ingredients</p>
+        <div id="search">
+            <form id="search" action="">
+                <input id="search" type="text" placeholder="Search">
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+    <div class="list">
+        <p>Ingredients</p>
+        <form action="box.asp">
+            <select name="ingredients" multiple="multiple" size=10 width=300 STYLE="width: 360px">
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+                <option value="input">empty</option>
+            </select>
+        </form>
+    </div>
+</aside>
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
