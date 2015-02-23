@@ -33,8 +33,6 @@
     {% block pageContent %}
         <div class="container main-container" ng-app="recipeViewerApp">
             <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
-                <h1>CannyKitchen</h1>
-            {% endif %}
         </div>
     {% endblock %}
 
