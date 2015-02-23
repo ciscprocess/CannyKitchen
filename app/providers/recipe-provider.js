@@ -32,9 +32,8 @@ var requestRandom = function(howMany) {
   countResult.exec(function(iHateAsync, count) {
     skip = _.random(0, count - howMany - 1);
     Recipe.find({
-      $query: {
-      }
-    }).skip(skip)
+      selectionToken: { $gt: Math.random() }
+    }).sort({ selectionToken: 1 })
       .limit(howMany)
       .lean()
       .exec(function(error, recipes) {
