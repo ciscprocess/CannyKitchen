@@ -2,9 +2,9 @@ var express = require('express'),
     router = express.Router(),
     mongoose = require('mongoose'),
     User = mongoose.model('User'),
-    extend = require('extend'),
     swig = require('swig'),
     bcrypt = require('bcrypt');
+var sess;
 
 module.exports = function (app) {
   app.use('/', router);
@@ -13,9 +13,16 @@ module.exports = function (app) {
 swig.setDefaults({ cache: false });
 
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: 'Home'
-  });
+  sess = req.session;
+  if(sess.username) {
+    res.render('index', {
+      name: sess.username,
+      title: 'Home'});
+  } else {
+    res.render('index', {
+      title: 'Home'
+    });
+  }
 });
 
 router.get('/login', function (req, res) {
@@ -24,23 +31,9 @@ router.get('/login', function (req, res) {
   });
 });
 
-router.post('/login', function (req, res) {
-  var email = req.body.email;
-  var pw = req.body.password;
-
-  User.findOne({'email' : email}, function (err, user) {
-    if (user) {
-      bcrypt.compare(pw, user.password, function (err, match) {
-        if (match) {
-          res.send("Login successful.");
-        } else {
-          res.render('login', {alert: "yes"});
-        }
-      });
-    } else {
-      res.render('login', { alert: "yes" });
-    }
-  });
+router.get('/logout', function (req, res) {
+  req.session.destroy();
+  res.redirect('/');
 });
 
 router.get('/signup', function (req, res) {
@@ -49,29 +42,16 @@ router.get('/signup', function (req, res) {
     });
 });
 
-router.post('/signup', function (req, res) {
-  var email = req.body.email;
-  var username = req.body.username;
-  var pw = req.body.password;
-  var cpw = req.body.cfmpassword;
-  User.findOne({'email' : email}, function (err, doc) {
-    if (doc) {
-      res.render('signup', {alert: "yes", msg: "Email already taken."});
-    } else if (pw != cpw) {
-      res.render('signup', {alert: "yes", msg: "Passwords do not match."});
-    } else {
-      var hash = bcrypt.hashSync(pw, 10);
-      var newUser = new User({username: username, email: email, password: hash});
-      newUser.save(function (err) {
-        if (err) res.send('Error.');
-            res.send('Success.');
-      });
-    }
-  });
-});
-
 router.get('/about', function(req, res) {
-  res.render('about', {
-    title: 'About'
-  });
+  sess = req.session;
+  if (sess.username) {
+    res.render('about', {
+      name: sess.username,
+      title: 'About'
+    });
+  } else {
+    res.render('about', {
+      title: 'About'
+    });
+  }
 });

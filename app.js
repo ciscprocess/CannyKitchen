@@ -2,7 +2,8 @@ var express = require('express'),
     config = require('./config/config'),
     glob = require('glob'),
     mongoose = require('mongoose'),
-    swig = require('swig');
+    swig = require('swig'),
+    session = require('express-session');
 
 swig.setDefaults({
     locals: {
@@ -23,6 +24,11 @@ models.forEach(function (model) {
 });
 
 var app = express();
+app.use(session({
+	secret: 'secretkey',
+	resave: false,
+	saveUninitialized: false
+}));
 
 require('./config/express')(app, config);
 
