@@ -1,17 +1,29 @@
 var express = require('express'),
     router = express.Router(),
-    generator = require('../procedures/generation/recipe-generator');
+    generator = require('../procedures/generation/recipe-generator'),
+    moment = require('moment');
 
 module.exports = function (app) {
   app.use('/', router);
 };
 
 router.get('/api/generate-recipes/:start/:end', function (req, res) {
-  var start = parseInt(req.params.start),
-      end = parseInt(req.params.end);
+  var start = moment(req.params.start),
+      end = moment(req.params.end),
+      days = moment.duration(Math.abs(end.diff(start)));
 
-  generator.generate(end - start, 0).then(function(recipes) {
+  generator.generate(days.days(), 0).then(function(recipes) {
+    var dates =  [];
+    _.each(_.range(0, days.days()), function() {
+      dates.push(start.format('YYYY-MM-DD'));
+      start.add(1, 'days');
+    });
 
-    res.json(recipes);
+    var result = {
+      dates: dates,
+      recipes: recipes
+    };
+
+    res.json(result);
   });
 });
