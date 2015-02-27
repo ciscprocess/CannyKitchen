@@ -10,25 +10,45 @@
         <br />
     </span>
 
-    <div ng-if="recipes.length" class="recipes-container">
-        <table>
-            <tr>
-                <td ng-repeat="recipe in recipes">
-                    <div class="well" style="margin-right: 2px;">
-                        Day {{ $index }}
-                    </div>
-                    <div class="well" style="height: 200px; margin-top: -19px; margin-right: 2px;">
-                        <img class="recipe-thumbnail" ng-src="{{ recipe.image }}"/>
-                        <br />
-                        <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
+    <div ng-if="recipes.length">
+        <form method="post" action="/savedmeals">
+            <div class="recipes-container table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th ng-repeat="recipe in recipes">Day {{ $index }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td ng-repeat="recipe in recipes">
+                                <!-- <div class="well" style="margin-right: 2px;">
+                                    Day {{ $index }}
+                                </div> -->
+                                <!-- <div class="well" style="height: auto; margin-top: -19px; margin-right: 2px;">  -->
+                                <img class="recipe-thumbnail" ng-src="{{ recipe.image }}"/>
+                                <br />
+                                <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
+                                <input type="hidden" name="recipename" value="{{ recipe.name }}">
+                                <input type="hidden" name="recipeurl" value="{{ recipe.url }}">
+                                <input type="hidden" name="recipeingr" value="{{ recipe.ingredients }}">
 
-                        <ul>
-                            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                                <ul>
+                                    <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
+                                </ul>
+                                <!-- </div> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p ng-if="!user">
+                <button class="btn btn-default disabled">Save Meal Plan</button> <a href="/login">Login/Register to save meal plans!</a> 
+            </p>
+            <p ng-if="user">
+                <button type="submit" class="btn btn-default">Save Meal Plan</button>
+            </p>
+        </form>
     </div>
     <a class="btn btn-default" ng-click="fetchRecipes()">Generate Meal Plan!</a>
 </div>

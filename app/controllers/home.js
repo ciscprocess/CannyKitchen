@@ -14,15 +14,10 @@ swig.setDefaults({ cache: false });
 
 router.get('/', function (req, res, next) {
   sess = req.session;
-  if(sess.username) {
-    res.render('index', {
-      name: sess.username,
-      title: 'Home'});
-  } else {
-    res.render('index', {
-      title: 'Home'
-    });
-  }
+  res.render('index', {
+    name: sess.username,
+    title: 'Home'
+  });
 });
 
 router.get('/login', function (req, res) {
@@ -44,14 +39,8 @@ router.get('/signup', function (req, res) {
 
 router.get('/about', function(req, res) {
   sess = req.session;
-  if (sess.username) {
-    res.render('about', {
-      name: sess.username,
-      title: 'About'
-    });
-  } else {
-    res.render('about', {
-      title: 'About'
-    });
-  }
+  res.render('about', {
+    name: sess.username,
+    title: 'About'
+  });
 });

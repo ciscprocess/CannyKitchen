@@ -9,7 +9,7 @@
 
 		<link rel="stylesheet" href="/css/style.css">
 
-        <script src="/components/jquery/dist/jquery.min.js"></script>
+        <script src="/components/jquery/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/components/angular/angular.js"></script>
         <script src="/recipeViewerApp/config.js"></script>
