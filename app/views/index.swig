@@ -35,6 +35,13 @@
 
     {% block pageContent %}
         <div class="container main-container" ng-app="recipeViewerApp">
+            <!--<div style="margin-bottom:4px;" class="clonedInput">
+                <input type="button" class="btnDel" value="Delete" disabled="disabled" />
+                <input type="text" name="input1" />
+            </div>
+            <div>
+                <input type="button" id="btnAdd" value="Add ingredient" />
+            </div>-->
             <aside class="sidebar">
                 <div class="intro">
                     <p>Search the ingredients you have and plan to use at the search bar. It will then add the ingredients to the box below.</p>
@@ -42,25 +49,25 @@
                 <div ng-controller="IngredientListController">
                     <div class="content">
                         <p>Search for your ingredients:</p>
-                            <input list="ingredient" name="ingredient">
-                            <datalist id="ingredient">
-                                <option value="Apple">
-                                <option value="Banana">
-                                <option value="Cabbage">
-                                <option value="Dandelion">
-                                <option value="Egg">
-                                <option value="Fennel">
-                                <option value="Grape">
-                                <option value="Icing">
-                                <option value="Jam">
-                                <option value="Ketchup">
-                            </datalist>
-                            <button ng-click="addQuery()">Submit</button>
+                        <input list="item" name="item">
+                            <datalist id="item">
+                            <option value="Apple">
+                            <option value="Banana">
+                            <option value="Cabbage">
+                            <option value="Dandelion">
+                            <option value="Egg">
+                            <option value="Fennel">
+                            <option value="Grape">
+                            <option value="Icing">
+                            <option value="Jam">
+                            <option value="Ketchup">
+                        </datalist>
+                        <button ng-click="addQuery()">Submit</button>
+                        <p>{{ itm }}</p>
                     </div>
                     <div class="list">
                         <p>Ingredients:</p>
-                        <form action="box.asp">
-                            <select name="ingredients" multiple="multiple" size=10 width=200 STYLE="width: 200px">
+                            <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px">
                                 <option value="input">empty</option>
                                 <option value="input">empty</option>
                                 <option value="input">empty</option>
@@ -72,9 +79,8 @@
                                 <option value="input">empty</option>
                                 <option value="input">empty</option>
                             </select>
-                            <button ng-click="RemoveQuery()">Remove</button>
-                            <input type="button" value="Remove All" class="bt"/><br/>
-                        </form>
+                        <button ng-click="removeQuery()">Remove</button>
+                        <button ng-click="reset()">Reset</button>
                     </div>
                 </div>
                 <div class="description">

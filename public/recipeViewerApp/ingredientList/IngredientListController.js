@@ -1,7 +1,16 @@
 angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $http) {
-    var ingredientDiv = $('#ingredients');
-    var i = $('#ingredients i').size() + 1;
-    $scope.addQuery = function() {
-        $('<p><label for="ingredients"><input type="text" id="ingredient" size="20" name="ingredient_' + i +'" value="" placeholder="Search" /></label> <a href="#" id="removeIngredient">Remove</a></p>').appendTo(ingredientDiv); i++; return false;
+    $scope.itm = [];
+    var ingredients = 1;
+    $scope.addQuery = function(e) {
+        $http.get('/api/items').
+            success(function(data) {
+                $scope.itm = data;
+            });
     };
+    $scope.removeQuery = function(e) {
+        alert("Remove this ingredient?");
+    }
+    $scope.reset = function(e) {
+        alert("Are you sure you want to delete all ingredients?");
+    }
 });
