@@ -1,13 +1,10 @@
 var express = require('express'),
     router = express.Router(),
     generator = require('../procedures/generation/recipe-generator'),
-<<<<<<< HEAD
     mongoose = require('mongoose'), 
     SavedRecipes = mongoose.model('SavedRecipes'),
     Recipe = mongoose.model('Recipe');
-=======
     moment = require('moment');
->>>>>>> master
 
 module.exports = function (app) {
   app.use('/', router);

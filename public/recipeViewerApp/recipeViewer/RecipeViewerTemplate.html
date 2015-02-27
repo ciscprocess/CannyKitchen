@@ -10,14 +10,13 @@
         <br />
     </span>
 
-<<<<<<< HEAD
     <div ng-if="recipes.length">
         <form method="post" action="/savedmeals">
             <div class="recipes-container table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th ng-repeat="recipe in recipes">Day {{ $index }}</th>
+                            <th ng-repeat="recipe in recipes">{{ dates[$index] }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,19 +32,8 @@
                                 <input type="hidden" name="recipename" value="{{ recipe.name }}">
                                 <input type="hidden" name="recipeurl" value="{{ recipe.url }}">
                                 <input type="hidden" name="recipeingr" value="{{ recipe.ingredients }}">
-=======
-    <div ng-if="recipes.length" class="recipes-container">
-        <table>
-            <tr>
-                <td ng-repeat="recipe in recipes">
-                    <div class="well" style="margin-right: 2px;">
-                        {{ dates[$index] }}
-                    </div>
-                    <div class="well" style="height: 200px; margin-top: -19px; margin-right: 2px;">
-                        <img class="recipe-thumbnail" ng-src="{{ recipe.image }}"/>
-                        <br />
-                        <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
->>>>>>> master
+
+                                <div ng-if="recipes.length" class="recipes-container">
 
                                 <ul>
                                     <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
