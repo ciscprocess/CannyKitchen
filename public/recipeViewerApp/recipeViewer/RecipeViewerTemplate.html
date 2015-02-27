@@ -10,6 +10,7 @@
         <br />
     </span>
 
+<<<<<<< HEAD
     <div ng-if="recipes.length">
         <form method="post" action="/savedmeals">
             <div class="recipes-container table-responsive">
@@ -32,6 +33,19 @@
                                 <input type="hidden" name="recipename" value="{{ recipe.name }}">
                                 <input type="hidden" name="recipeurl" value="{{ recipe.url }}">
                                 <input type="hidden" name="recipeingr" value="{{ recipe.ingredients }}">
+=======
+    <div ng-if="recipes.length" class="recipes-container">
+        <table>
+            <tr>
+                <td ng-repeat="recipe in recipes">
+                    <div class="well" style="margin-right: 2px;">
+                        {{ dates[$index] }}
+                    </div>
+                    <div class="well" style="height: 200px; margin-top: -19px; margin-right: 2px;">
+                        <img class="recipe-thumbnail" ng-src="{{ recipe.image }}"/>
+                        <br />
+                        <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
+>>>>>>> master
 
                                 <ul>
                                     <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
@@ -50,5 +64,38 @@
             </p>
         </form>
     </div>
+
+    <p class="input-group" style="width: 20%;">
+        <input type="text"
+               class="form-control"
+               datepicker-popup="{{format}}"
+               ng-model="dateStart"
+               is-open="startOpened"
+               min-date="minDate"
+               max-date="'2015-06-22'"
+               datepicker-options="dateOptions"
+               ng-required="true"
+               close-text="Close" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openStart($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </p>
+
+    <p class="input-group" style="width: 20%;">
+        <input type="text"
+               class="form-control"
+               datepicker-popup="{{format}}"
+               ng-model="dateEnd"
+               is-open="endOpened"
+               min-date="minDate"
+               max-date="'2015-06-22'"
+               datepicker-options="dateOptions"
+               ng-required="true"
+               close-text="Close" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </p>
+
     <a class="btn btn-default" ng-click="fetchRecipes()">Generate Meal Plan!</a>
 </div>

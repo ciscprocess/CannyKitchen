@@ -1,8 +1,7 @@
 var mongoose = require('mongoose'),
     request = require('request'),
     q = require('q'),
-    Recipe = mongoose.model('Recipe'),
-    _ = require('underscore');
+    Recipe = mongoose.model('Recipe');
 
 var requestByName = function(name) {
   var deferred = q.defer();
@@ -26,15 +25,12 @@ var requestByName = function(name) {
 
 var requestRandom = function(howMany) {
   var deferred = q.defer(),
-      countResult = Recipe.count(),
-      skip = 0;//_.random(0, count - howMany - 1);
+      countResult = Recipe.count();
 
   countResult.exec(function(iHateAsync, count) {
-    skip = _.random(0, count - howMany - 1);
     Recipe.find({
-      $query: {
-      }
-    }).skip(skip)
+      selectionToken: { $gt: Math.random() }
+    }).sort({ selectionToken: 1 })
       .limit(howMany)
       .lean()
       .exec(function(error, recipes) {
@@ -42,6 +38,8 @@ var requestRandom = function(howMany) {
         deferred.reject('Error in requestRandom');
       } else {
         recipes.forEach(function(recipe) {
+
+          // ugly, temporary, hack until I can fix the data
           recipe.image = (recipe.image || '')
               .replace('http://static.tastykitchen.com/recipes/files/',
               'http://tastykitchen.com/recipes/wp-content/uploads/sites/2/');

@@ -10,7 +10,7 @@ module.exports = function (app) {
 
 router.get('/api/ingredients/keyword/:keyword', function (req, res) {
   var keyword = req.params.keyword;
-  Recipe.fromWebCall();
+
   ingredientProvider.byName(keyword).then(function(ingredients) {
     res.json(ingredients);
   });
