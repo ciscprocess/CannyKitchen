@@ -29,7 +29,8 @@ var requestRandom = function(howMany) {
 
   countResult.exec(function(iHateAsync, count) {
     Recipe.find({
-      selectionToken: { $gt: Math.random() }
+      selectionToken: { $gt: Math.random() },
+      'ingredients.0': { $exists: true }
     }).sort({ selectionToken: 1 })
       .limit(howMany)
       .lean()

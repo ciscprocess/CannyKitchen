@@ -19,6 +19,10 @@ router.get('/api/generate-recipes/:start/:end', function (req, res) {
       start.add(1, 'days');
     });
 
+    if (_.any(recipes, function(recipe) { return !recipe.ingredients || recipe.ingredients.length < 0; })) {
+      console.log('Error: Recipes with no Ingredients returned!');
+    }
+
     var result = {
       dates: dates,
       recipes: recipes

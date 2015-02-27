@@ -23,7 +23,7 @@
                         <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
 
                         <ul>
-                            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient }}</li>
+                            <li ng-repeat="ingredient in recipe.ingredients track by $index">{{ ingredient }}</li>
                         </ul>
                     </div>
                 </td>

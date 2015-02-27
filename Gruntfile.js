@@ -127,7 +127,7 @@ module.exports = function (grunt) {
         counter++;
         iter();
       });
-    };
+    }
 
     iter();
   });
