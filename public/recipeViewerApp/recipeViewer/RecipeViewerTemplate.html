@@ -29,9 +29,9 @@
                                 <img class="recipe-thumbnail" ng-src="{{ recipe.image }}"/>
                                 <br />
                                 <a href="{{ recipe.url || '#' }}"> {{ recipe.name }} </a>
-                                <input type="hidden" name="recipename" value="{{ recipe.name }}">
-                                <input type="hidden" name="recipeurl" value="{{ recipe.url }}">
-                                <input type="hidden" name="recipeingr" value="{{ recipe.ingredients }}">
+                                <input type="hidden" name="recipename[]" value="{{ recipe.name }}">
+                                <input type="hidden" name="recipeurl[]" value="{{ recipe.url }}">
+                                <input type="hidden" name="recipeingr[]" value="{{ recipe.ingredients }}">
 
                                 <div ng-if="recipes.length" class="recipes-container">
 

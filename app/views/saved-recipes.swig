@@ -8,7 +8,7 @@
 
         {% if mealplan != '' %}
             {% for recipe in mealplan|sort("created") %}
-            <p><b>Meal Plan {{ loop.index }}</b> (Created on {{ recipe.created|date('m-d-Y') }})</p>
+            <p><b>Meal Plan {{ loop.index }}</b></p>
                 {% for r in recipe.recipes %}
                 <p>
                     Day {{ loop.index }}: <a href="{{ recipe.recipes[loop.index0].url }}">{{ recipe.recipes[loop.index0].name }}</a>
