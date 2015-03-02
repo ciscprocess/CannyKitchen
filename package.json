@@ -23,7 +23,9 @@
     "q": "~1.1.2",
     "bcrypt": "~0.8.1",
     "express-session": "~1.10.2",
-    "moment": "~2.9.0"
+    "moment": "~2.9.0",
+    "wordpos": "~0.1.15",
+    "inflection": "~1.6.0 "
   },
   "devDependencies": {
     "grunt": "~0.4.5",
