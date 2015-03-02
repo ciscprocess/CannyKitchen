@@ -72,23 +72,23 @@ var rejectDescriptor = function(descriptor) {
   return descriptor.slice(0, descriptor.length/2) === descriptor.slice(descriptor.length/2 + 1, descriptor.length);
 };
 
-var isAdjective = function(word) {
+var isNoun = function(word) {
   var deferred = q.defer();
-  wordpos.isAdjective(word, function(bool) {
-    bool ? deferred.resolve(false, word) : deferred.resolve(true, word);
+  wordpos.isNoun(word, function(bool) {
+    bool ? deferred.resolve(true, word) : deferred.resolve(false, word);
   });
   return deferred.promise;
 };
 
-var stripAdjectives = function(sentence) {
+var stripNonNouns = function(sentence) {
   var deferred = q.defer(),
       promise = q(null),
-      words = name.split(' '),
+      words = sentence.split(' '),
       accepted = [];
 
   _(words).each(function(word) {
     promise = promise.then(function() {
-      return isAdjective(word);
+      return isNoun(word);
     }).then(function(result) {
       result ? accepted.push(word) : _.noop();
     });
@@ -105,20 +105,28 @@ var parse = function(descriptor) {
   var results = matchRegex().exec(descriptor.toLowerCase());
   var name = results[8];
 
-  var noadj = stripAdjectives('uncooked hamburger');
-  var ingredientType = new IngredientType({
-    normalizedName: results[8].toLowerCase()
+  var noadj = stripNonNouns(name).then(function(sentence) {
+    return sentence.replace(',', '');
   });
 
-  if (!rejectDescriptor(descriptor)) {
-    ingredientType.save(function(err) {
-      console.error(err);
+  noadj.then(function(final) {
+    var ingredientType = new IngredientType({
+      normalizedName: final
     });
-  } else {
-    console.warn('Descriptor rejected: ' + descriptor);
-  }
 
-  return ingredientType;
+    if (!rejectDescriptor(descriptor)) {
+      ingredientType.save(function(err) {
+        console.error(err);
+      });
+    } else {
+      console.warn('Descriptor rejected: ' + descriptor);
+    }
+  });
+
+
+
+
+  return null;
 };
 
 module.exports = {
