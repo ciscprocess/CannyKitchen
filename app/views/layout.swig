@@ -12,13 +12,17 @@
         <script src="/components/jquery/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/components/angular/angular.js"></script>
+<<<<<<< HEAD
         <script src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+=======
+
+>>>>>>> ckdev-35-gui
         <script src="/recipeViewerApp/config.js"></script>
         <script src="/recipeViewerApp/recipeViewer/RecipeViewerController.js"></script>
+        <script src="/recipeViewerApp/ingredientList/IngredientListController.js"></script>
 	</head>
 
 	<body>
         {% block content %} {% endblock %}
 	</body>
 </html>
-

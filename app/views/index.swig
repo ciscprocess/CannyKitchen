@@ -1,3 +1,6 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
 {% extends 'layout.swig' %}
 {% block content %}
     <!-- Navigation -->
@@ -13,12 +16,12 @@
                 </button>
                 <a class="navbar-brand" href="/">CannyKitchen</a>
             </div>
-
             <div class="collapse navbar-collapse" id="navbar-collapse1">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li><a href="/">Links</a></li>
                     {% if name %}
                         <li><a href="/savedmeals">My Meal Plans</a>
                         <li><a href="/logout">Logout</a></li>
@@ -33,8 +36,72 @@
 
     {% block pageContent %}
         <div class="container main-container" ng-app="recipeViewerApp">
+            <aside class="sidebar">
+                <div class="intro">
+                    <p>Search the ingredients you have and plan to use at the search bar. It will then add the ingredients to the box below.</p>
+                </div>
+                <div ng-app="" ng-controller="IngredientListController">
+                    <p>Search for your ingredients</p>
+                    <input list="list" name="list" ng-model="Ingredients"/>
+                    <datalist id="list">
+                        <option value="Apple">
+                        <option value="Banana">
+                        <option value="Cabbage">
+                        <option value="Dandelion">
+                        <option value="Egg">
+                        <option value="Fennel">
+                        <option value="Grape">
+                        <option value="Icing">
+                        <option value="Jam">
+                        <option value="Ketchup">
+                    </datalist>
+                    <button ng-click="addQuery()">Submit</button>
+                    <p>Ingredient Lists</p>
+                    <ul>
+                        <li ng-repeat="item in items"> {% raw %} {{ item }} {% endraw %} </li>
+                    </ul>
+                    <pre>Ingredients={% raw %} {{ items }} {% endraw %}</pre>
+                </div>
+                    <!--<div class="content">
+                        <p>Search for your ingredients:</p>
+                        <input list="item" name="item">
+                            <datalist id="item">
+                            <option value="Apple">
+                            <option value="Banana">
+                            <option value="Cabbage">
+                            <option value="Dandelion">
+                            <option value="Egg">
+                            <option value="Fennel">
+                            <option value="Grape">
+                            <option value="Icing">
+                            <option value="Jam">
+                            <option value="Ketchup">
+                        </datalist>
+                        <button ng-click="addQuery()">Submit</button>
+                        <p>{{ itm }}</p>
+                    </div>
+                    <div class="list">
+                        <p>Ingredients:</p>
+                            <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px">
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                                <option value="input">empty</option>
+                            </select>
+                            -->
+                        <button ng-click="removeQuery()">Remove</button>
+                        <button ng-click="reset()">Reset</button>
+                <div class="description">
+                    <p>After putting all your ingredients, click the generate button to receive your available recipes. It's simple as that.</p>
+                </div>
+            </aside>
             <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
         </div>
     {% endblock %}
-
-{% endblock %}
+    {% endblock %}
