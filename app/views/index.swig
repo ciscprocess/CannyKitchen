@@ -35,19 +35,33 @@
 
     {% block pageContent %}
         <div class="container main-container" ng-app="recipeViewerApp">
-            <!--<div style="margin-bottom:4px;" class="clonedInput">
-                <input type="button" class="btnDel" value="Delete" disabled="disabled" />
-                <input type="text" name="input1" />
-            </div>
-            <div>
-                <input type="button" id="btnAdd" value="Add ingredient" />
-            </div>-->
             <aside class="sidebar">
                 <div class="intro">
                     <p>Search the ingredients you have and plan to use at the search bar. It will then add the ingredients to the box below.</p>
                 </div>
-                <div ng-controller="IngredientListController">
-                    <div class="content">
+                <div ng-app="" ng-controller="IngredientListController">
+                    <p>Search for your ingredients</p>
+                    <input list="list" name="list" ng-model="Ingredients"/>
+                    <datalist id="list">
+                        <option value="Apple">
+                        <option value="Banana">
+                        <option value="Cabbage">
+                        <option value="Dandelion">
+                        <option value="Egg">
+                        <option value="Fennel">
+                        <option value="Grape">
+                        <option value="Icing">
+                        <option value="Jam">
+                        <option value="Ketchup">
+                    </datalist>
+                    <button ng-click="addQuery()">Submit</button>
+                    <p>Ingredient Lists</p>
+                    <ul>
+                        <li ng-repeat="item in items"> {% raw %} {{ item }} {% endraw %} </li>
+                    </ul>
+                    <pre>Ingredients={% raw %} {{ items }} {% endraw %}</pre>
+                </div>
+                    <!--<div class="content">
                         <p>Search for your ingredients:</p>
                         <input list="item" name="item">
                             <datalist id="item">
@@ -79,10 +93,9 @@
                                 <option value="input">empty</option>
                                 <option value="input">empty</option>
                             </select>
+                            -->
                         <button ng-click="removeQuery()">Remove</button>
                         <button ng-click="reset()">Reset</button>
-                    </div>
-                </div>
                 <div class="description">
                     <p>After putting all your ingredients, click the generate button to receive your available recipes. It's simple as that.</p>
                 </div>
