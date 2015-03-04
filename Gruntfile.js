@@ -1,10 +1,14 @@
 'use strict';
 
+// setting global libraries
+GLOBAL._ = require('underscore');
+
 var request = require('request'),
     mongoose = require('mongoose'),
     config = require('./config/config'),
     glob = require('glob'),
     fs = require('fs');
+
 
 module.exports = function (grunt) {
   // show elapsed time at the end
@@ -130,6 +134,55 @@ module.exports = function (grunt) {
     }
 
     iter();
+  });
+
+  grunt.registerTask('extract-ingredients', function() {
+    var raw = fs.readFileSync('./config/recipeitems-latest.json').toString().split('\n');
+    var file = '';
+    for (var i = 0; i < raw.length; i++) {
+      var json = JSON.parse(raw[i]);
+      var ingredients = json.ingredients.split('\n');
+      file += ingredients.join(' . ') + '\n';
+    }
+
+    fs.writeFileSync('./config/extraction.txt', file);
+  });
+
+  grunt.registerTask('extract-types', function() {
+    var connection = mongoose.connect(config.db);
+    var db = mongoose.connection;
+    db.on('error', function () {
+      throw new Error('unable to connect to database at ' + config.db);
+    });
+
+    var models = glob.sync(config.root + '/app/models/*.js');
+    models.forEach(function (model) {
+      require(model);
+    });
+
+    var done = this.async();
+    var Recipe = connection.model('Recipe'),
+        IngredientType = connection.model('IngredientType');
+    var IngredientParser = require('./app/procedures/generation/ingredient-parser');
+    Recipe.find().limit(200).exec(function(err, recipes) {
+      for (var i = 0; i < recipes.length; i++) {
+        _.each(recipes[i].ingredients, function(ingredient) {
+          IngredientParser.parseDescriptor(ingredient).then(function(type) {
+            if (type) {
+              type.save(function(err) {
+                console.error(err);
+              });
+            } else {
+              console.log('no type');
+            }
+          });
+        });
+      }
+
+    });
+
+
+    //IngredientType.save();
   });
 
   grunt.registerTask('default', [
