@@ -42,7 +42,7 @@
                 </div>
                 <div ng-app="" ng-controller="IngredientListController">
                     <p>Search for your ingredients</p>
-                    <input list="list" name="list" ng-model="Ingredients"/>
+                    <input ng-keypress="enter($event)" placeholder="Search" list="list" name="ingredients" ng-model="Ingredients"/>
                     <datalist id="list">
                         <option value="Apple">
                         <option value="Banana">
@@ -57,48 +57,27 @@
                     </datalist>
                     <button ng-click="addQuery()">Submit</button>
                     <p>Ingredient Lists</p>
-                    <ul>
+                    <!--<ul>
                         <li ng-repeat="item in items"> {% raw %} {{ item }} {% endraw %} </li>
-                    </ul>
+                    </ul>-->
                     <pre>Ingredients={% raw %} {{ items }} {% endraw %}</pre>
-                </div>
-                    <!--<div class="content">
-                        <p>Search for your ingredients:</p>
-                        <input list="item" name="item">
-                            <datalist id="item">
-                            <option value="Apple">
-                            <option value="Banana">
-                            <option value="Cabbage">
-                            <option value="Dandelion">
-                            <option value="Egg">
-                            <option value="Fennel">
-                            <option value="Grape">
-                            <option value="Icing">
-                            <option value="Jam">
-                            <option value="Ketchup">
-                        </datalist>
-                        <button ng-click="addQuery()">Submit</button>
-                        <p>{{ itm }}</p>
-                    </div>
-                    <div class="list">
+
+                    <select size=10 STYLE="width: 300px">
+                        <option ng-repeat="item in items">{% raw %} {{ item }} {% endraw %}</option>
+                    </select>
+
+                    <p>Selected Colors: {% raw %}{{ selectedIngredients }}{% endraw %}</p>
+
+                    <!--<div class="array">
                         <p>Ingredients:</p>
-                            <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px">
+                            <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px" ng-controller="IngredientListController">
                                 <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                                <option value="input">empty</option>
-                            </select>
-                            -->
-                        <button ng-click="removeQuery()">Remove</button>
-                        <button ng-click="reset()">Reset</button>
+                            </select>-->
+                    <button ng-click="remove()">Remove</button>
+                    <button ng-click="reset()">Reset</button>
+                </div>
                 <div class="description">
-                    <p>After putting all your ingredients, click the generate button to receive your available recipes. It's simple as that.</p>
+                    <p>After putting all your ingredients, click "Generate Meal Plan" button at right to receive your available recipes. It's simple!</p>
                 </div>
             </aside>
             <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
