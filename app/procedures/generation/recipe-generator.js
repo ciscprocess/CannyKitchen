@@ -7,6 +7,8 @@ var generate = function(periodLength, fitness) {
   var done = recipeResult.then(function(recipes) {
     var ingreds = _.first(recipes).ingredients;
     parser.parseDescriptor(_.first(ingreds));
+
+    return recipes;
   });
   return done;
 };
