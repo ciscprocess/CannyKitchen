@@ -15,10 +15,10 @@
         <script src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <script src="/recipeViewerApp/config.js"></script>
         <script src="/recipeViewerApp/recipeViewer/RecipeViewerController.js"></script>
+        <script src="/recipeViewerApp/ingredientList/IngredientListController.js"></script>
 	</head>
 
 	<body>
         {% block content %} {% endblock %}
 	</body>
 </html>
-
