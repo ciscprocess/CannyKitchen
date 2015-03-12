@@ -2,7 +2,6 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     $scope.items = ['a', 'b'];
     $scope.itemLimit = 12;
     $scope.text = 'item';
-    $scope.users = $scope.items;
 
     $scope.addQuery = function(e) {
         if ($scope.Ingredients) {
