@@ -1,12 +1,12 @@
 angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $http) {
-    $scope.items = ['a', 'b'];
+    $scope.ingredients = [];
     $scope.itemLimit = 12;
     $scope.text = 'item';
 
     $scope.addQuery = function(e) {
-        if ($scope.Ingredients) {
-            $scope.items.push($scope.Ingredients);
-            $scope.Ingredients = '';
+        if ($scope.items) {
+            $scope.ingredients.push($scope.items);
+            $scope.items = '';
         }
     };
 
@@ -17,13 +17,17 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     };
 
     $scope.remove = function(item) {
-        alert("Are you sure you want to delete this ingredient?");{
-            var index = $scope.items.indexOf(item);
-            $scope.items.splice(index, 1);
+        var answer = confirm("Are you sure you want to delete this ingredient?");
+        if (answer) {
+            var index = $scope.ingredients.indexOf(item);
+            console.log(index);
+            $scope.ingredients.splice(index, 1);
         }
     };
     $scope.reset = function() {
-        alert("Are you sure you want to delete all ingredients?");
-        $scope.items.length = 0;
+        var answer = confirm ("Are you sure you want to delete all ingredients?");
+        if (answer) {
+            $scope.ingredients = [];
+        };
     };
 });

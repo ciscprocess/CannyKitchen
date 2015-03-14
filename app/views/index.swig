@@ -34,11 +34,12 @@
         <div class="container main-container" ng-app="recipeViewerApp">
             <aside class="well sidebar-nav sidebar-custom">
                 <div class="intro">
+                    <h2>Instruction</h2>
                     <p>Search the ingredients you have and plan to use at the search bar. It will then add the ingredients to the box below.</p>
                 </div>
                 <div ng-app="" ng-controller="IngredientListController">
                     <p>Search for your ingredients:</p>
-                    <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="Ingredients"/>
+                    <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
                     <datalist id="list">
                         <option value="Apple">
                         <option value="Banana">
@@ -54,21 +55,35 @@
                     <a class="btn btn-default buttoncustom" ng-click="addQuery()">Submit</a>
                     <p>Ingredient Lists:</p>
 
-                    <pre>Ingredients={% raw %} {{ items }} {% endraw %}</pre>
-
-                    <select size=10 STYLE="width: 300px">
-                        <option ng-repeat="item in items">{% raw %} {{ item }} {% endraw %}</option>
+                    <pre>Ingredients={% raw %} {{ ingredients }} {% endraw %}</pre>
+                    <select ng-model="ingredient" ng-options="i as i for i in ingredients" size=10 STYLE="width: 300px">
+                        <!--<option ng-repeat="item in ingredients">{% raw %} {{ item }} {% endraw %}</option>-->
                     </select>
 
-                    <p>Selected Ingredients: {% raw %}{{ items }}{% endraw %}</p>
+                    <p>Selected Ingredients: {% raw %}{{ ingredient }}{% endraw %}</p>
 
                     <!--<div class="array">
                         <p>Ingredients:</p>
                             <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px" ng-controller="IngredientListController">
                                 <option value="input">empty</option>
                             </select>-->
-                    <a class="btn btn-default" ng-click="remove(item)">Remove</a>
+                    <a class="btn btn-default" ng-click="remove(ingredient)">Remove</a>
                     <a class="btn btn-default" ng-click="reset()">Reset</a>
+                    <button class="btn btn-default" ng-click="open(customer)">{{ customer.name }}</button> <br />
+
+                    <!--MODAL WINDOW-->
+                    <script type="text/ng-template" id="myModalContent.html">
+                        <div class="modal-header">
+                            <h3>The Customer Name is: {{ customer.name }}</h3>
+                        </div>
+                        <div class="modal-body">
+                            This is where the Customer Details Goes<br />
+                            {{ customer.details }}
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </script>
                 </div>
                 <div class="description">
                     <p>After putting all your ingredients, click "Generate Meal Plan" button at right to receive your available recipes. It's simple!</p>
