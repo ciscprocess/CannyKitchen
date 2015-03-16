@@ -6,6 +6,8 @@ var generate = function(periodLength, fitness) {
   var recipeResult = recipeProvider.randomly(periodLength);
   var done = recipeResult.then(function(recipes) {
     return recipes;
+
+    return recipes;
   });
   return done;
 };

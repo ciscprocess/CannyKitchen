@@ -3,7 +3,7 @@
 @icon-font-path: "../components/bootstrap/fonts/";
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Trebuchet MS", Helvetica, Arial, sans-serif;
   background-color: #003d7a;
 }
 .border-radius(@radius){
@@ -12,14 +12,31 @@ body {
   .border-bottom-radius(@radius);
   .border-left-radius(@radius);
 }
-p {
-  color: #fff;
+
+.sidebar-custom {
+  position: absolute;
+  left: 0px;
+  width:350px;
+  margin-top: 15px;
+  height: 80%;
+  border-bottom:0px solid #fff;
+  border-right:0px solid #fff;
+  color: #000;
 }
 
-h1 {
-  color: #fff;
+.intro {
+  margin: 0px; top: 0px; padding: 0px 0px 0px 0px; list-style-type: none;
+  color: black;
 }
-
+.description {
+  margin: 0px; top: 0px; padding: 10px 10px 10px 0px; list-style-type: none;
+}
+.list {
+  margin: 10px; top: 10px; padding: 0px 0px 0px 39px; list-style-type: none;
+}
+.content {
+  margin: 10px; top: 10px; padding: 0px 0px 0px 39px; list-style-type: none;
+}
 
 a {
   color: #0085a1;
@@ -30,7 +47,7 @@ a:hover, a:focus {
 }
 
 .navbar-custom {
-  background-color: rgba(255,255,255,0.3);
+  background-color: rgba(0,255,255,0.3);
   border-bottom: 1px solid transparent;
   position: absolute;
   top: 0;
@@ -118,4 +135,41 @@ a:hover, a:focus {
 
 .main-container {
   margin-top: 30px;
+  margin-left: 360px;
+}
+
+
+
+.button-custom {
+  position: relative;
+  padding: 6px 15px;
+  left: -8px;
+  border: 2px solid #207cca;
+  background-color: #207cca;
+  color: #fafafa;
+}
+.button-custom:hover  {
+  background-color: #fafafa;
+  color: #207cca;
+}
+
+.ingredient-list {
+  p {
+    color: #000;
+  }
+}
+
+.recipe-viewer {
+  p {
+    color: #fff;
+  }
+
+
+  h1 {
+    color: white;
+  }
+
+  h2 {
+    color: blue;
+  }
 }

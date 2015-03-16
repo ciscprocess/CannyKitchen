@@ -15,3 +15,10 @@ router.get('/api/ingredients/keyword/:keyword', function (req, res) {
     res.json(ingredients);
   });
 });
+
+router.get('/api/ingredients', function (req, res) {
+    var food = req.body.item;
+    res.send({
+        itm: food
+    });
+});

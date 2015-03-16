@@ -3,6 +3,7 @@ var express = require('express'),
 	mongoose = require('mongoose'),
 	User = mongoose.model('User'),
 	bcrypt = require('bcrypt');
+
 var sess;
 
 module.exports = function (app) {
