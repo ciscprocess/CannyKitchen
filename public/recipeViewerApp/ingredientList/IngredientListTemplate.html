@@ -1,40 +1,28 @@
 <div ng-controller="IngredientListController">
     <aside class="well sidebar-nav sidebar-custom">
         <div class="intro">
-            <h2>Instruction</h2>
+            <h2>Instructions</h2>
             <hr>
-            <p>Search the ingredients you plan to use at the search bar. It will then add the ingredients to the box below.</p>
+            <p>Add ingredients that you already have or wish to use to the list below.</p>
         </div>
-        <div ng-app="" ng-controller="IngredientListController">
-            <p>Search for your ingredients:</p>
-            <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+        <div class="ingredient-list" ng-controller="IngredientListController">
             <datalist id="list">
-                <option value="Apple">
-                <option value="Banana">
-                <option value="Cabbage">
-                <option value="Dandelion">
-                <option value="Egg">
-                <option value="Fennel">
-                <option value="Grape">
-                <option value="Icing">
-                <option value="Jam">
-                <option value="Ketchup">
+                <option ng-repeat="suggestion in suggestions" value="{{ suggestion }}">
             </datalist>
-            <a class="btn btn-default buttoncustom" ng-click="addQuery()">Submit</a>
-            <p>Ingredient Lists:</p>
 
+            <p>Search for your ingredients:</p>
+
+            <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+
+            <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
+
+            <p>Ingredient Lists:</p>
             <pre>Ingredients= {{ ingredients }} </pre>
             <select ng-model="ingredient" ng-options="i as i for i in ingredients" size=10 STYLE="width: 300px">
-                <!--<option ng-repeat="item in ingredients">{% raw %} {{ item }} {% endraw %}</option>-->
             </select>
 
             <p>Selected Ingredients: {{ ingredient }} </p>
 
-            <!--<div class="array">
-                <p>Ingredients:</p>
-                    <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px" ng-controller="IngredientListController">
-                        <option value="input">empty</option>
-                    </select>-->
             <a class="btn btn-default" ng-click="remove(ingredient)">Remove</a>
             <a class="btn btn-default" ng-click="reset()">Reset</a>
         </div>

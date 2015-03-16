@@ -1,7 +1,19 @@
-angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $http) {
+angular.module('recipeViewerApp').controller('IngredientListController', function($scope) {
     $scope.ingredients = [];
     $scope.itemLimit = 12;
     $scope.text = 'item';
+
+    $scope.suggestions = [
+        'Apple',
+        'Banana',
+        'Cabbage',
+        'Dandelion',
+        'Egg',
+        'Fennel',
+        'Grape',
+        'Icing',
+        'Jam',
+        'Ketchup'];
 
     $scope.addQuery = function(e) {
         if ($scope.items) {
@@ -20,7 +32,6 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         var answer = confirm("Are you sure you want to delete this ingredient?");
         if (answer) {
             var index = $scope.ingredients.indexOf(item);
-            console.log(index);
             $scope.ingredients.splice(index, 1);
         }
     };
