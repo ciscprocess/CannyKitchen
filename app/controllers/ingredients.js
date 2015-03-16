@@ -16,7 +16,7 @@ router.get('/api/ingredients/keyword/:keyword', function (req, res) {
   });
 });
 
-router.get('/api/items', function (req, res) {
+router.get('/api/ingredients', function (req, res) {
     var food = req.body.item;
     res.send({
         itm: food
