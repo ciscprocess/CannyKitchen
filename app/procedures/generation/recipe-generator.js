@@ -5,8 +5,7 @@ var recipeProvider = require('../../providers/recipe-provider'),
 var generate = function(periodLength, fitness) {
   var recipeResult = recipeProvider.randomly(periodLength);
   var done = recipeResult.then(function(recipes) {
-    var ingreds = _.first(recipes).ingredients;
-    parser.parseDescriptor(_.first(ingreds));
+    return recipes;
   });
   return done;
 };

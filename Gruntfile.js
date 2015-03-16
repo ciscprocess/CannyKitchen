@@ -32,6 +32,16 @@ module.exports = function (grunt) {
         }
       }
     },
+    mochaTest: {
+      test: {
+        options: {
+          reporter: 'spec',
+          quiet: false, // Optionally suppress output to standard out (defaults to false)
+          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
+        },
+        src: ['test/**/*.js']
+      }
+    },
     watch: {
       options: {
         nospawn: true,
@@ -180,9 +190,6 @@ module.exports = function (grunt) {
       }
 
     });
-
-
-    //IngredientType.save();
   });
 
   grunt.registerTask('default', [
