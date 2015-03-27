@@ -1,0 +1,19 @@
+{
+    types: [
+        {
+            name: 'egg'
+        },
+        {
+            name: 'ham'
+        },
+        {
+            name: 'bread'
+        },
+        {
+            name: 'oil'
+        },
+        {
+            name: 'water'
+        }
+    ]
+}

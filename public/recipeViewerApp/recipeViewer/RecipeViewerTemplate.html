@@ -36,7 +36,7 @@
                                 <div ng-if="recipes.length" class="recipes-container">
 
                                 <ul>
-                            		<li ng-repeat="ingredient in recipe.ingredients track by $index">{{ ingredient }}</li>
+                            		<li ng-repeat="ingredient in recipe.prettyIngredients track by $index">{{ ingredient[1] }} units of {{ ingredient[0] }}</li>
                                 </ul>
                                 <!-- </div> -->
                             </td>

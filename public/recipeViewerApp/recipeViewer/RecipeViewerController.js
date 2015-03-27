@@ -20,7 +20,7 @@ angular.module('recipeViewerApp').controller('RecipeViewerController', function(
     $scope.startOpened = true;
   };
 
-  $scope.openEnd= function($event) {
+  $scope.openEnd = function($event) {
     $event.preventDefault();
     $event.stopPropagation();
 

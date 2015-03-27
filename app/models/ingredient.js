@@ -16,4 +16,4 @@ IngredientSchema.virtual('date')
       return this._id.getTimestamp();
     });
 
-//mongoose.model('Ingredient', IngredientSchema);
+mongoose.model('Ingredient', IngredientSchema);

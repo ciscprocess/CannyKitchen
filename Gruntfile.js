@@ -7,7 +7,8 @@ var request = require('request'),
     mongoose = require('mongoose'),
     config = require('./config/config'),
     glob = require('glob'),
-    fs = require('fs');
+    fs = require('fs'),
+    q = require('Q');
 
 
 module.exports = function (grunt) {
@@ -106,57 +107,88 @@ module.exports = function (grunt) {
       require(model);
     });
 
-    var done = this.async();
-    var Recipe = connection.model('Recipe');
+    var done = this.async(),
+        Recipe = connection.model('Recipe'),
+        IngredientType = connection.model('IngredientType'),
+        Ingredient = connection.model('Ingredient');
 
-    var raw = fs.readFileSync('./config/recipeitems-latest.json').toString().split('\n');
+    var typePromises = [];
 
+    var namesFile = fs.readFileSync('config/juicein.json').toString();
 
-    var counter = 0;
-    function iter() {
-      if (counter >= raw.length) {
-        done(true);
-        return;
-      }
+    // first, seed the sample ingredient types
+    var names = _.map(namesFile.split('\n'), JSON.parse),
+        types = [];
 
-      var rawRecipe = JSON.parse(raw[counter]);
-
-      var recipe = new Recipe({
-        name: rawRecipe.name,
-        ingredients: rawRecipe.ingredients.split('\n'),
-        url: rawRecipe.url,
-        image: rawRecipe.image,
-        duration: rawRecipe.cookTime,
-        yield: rawRecipe.recipeYield,
-        description: rawRecipe.description || '',
-        selectionToken: Math.random()
+    _(names).each(function(name) {
+      var deferred = q.defer();
+      var type = new IngredientType({
+        normalizedName: name.normalizedName,
+        aliases: []
       });
 
-      recipe.save(function(err) {
-        if (err) {
-          console.log('Error saving recipe: ' + err);
-        }
+      typePromises.push(deferred.promise);
 
-        console.log('Completion: ' + (((counter * 1.0) / raw.length) * 100) + '%');
-        counter++;
-        iter();
+      type.save(function() {
+        types.push(type);
+        deferred.resolve();
       });
-    }
+    });
 
-    iter();
+    q.all(typePromises).then(function() {
+      var list = _.range(100),
+          recipePromises = [],
+          ingredientPromises = [];
+      _(list).each(function() {
+        var ingredients = [],
+            count = _.random(3, 35),
+            sample = _.sample(types, count);
+        _(sample).each(function(it) {
+          var iDeferred = q.defer();
+
+          var ingredient = new Ingredient({
+            type: it,
+            amount: _.random(1, 5),
+            tags: []
+          });
+
+          ingredientPromises.push(iDeferred.promise);
+
+          ingredient.save(function(err) {
+            if (!err) {
+              ingredients.push(ingredient);
+              iDeferred.resolve();
+            }
+          });
+        });
+
+        q.all(ingredientPromises).then(function() {
+          var recipeDeferred = q.defer(),
+              recipe = new Recipe({
+                name: _.random(900000).toString(),
+                ingredients: ingredients,
+                url: '',
+                image: '',
+                duration: '',
+                yield: '',
+                description: '',
+                selectionToken: Math.random()
+              });
+
+          recipePromises.push(recipeDeferred.promise);
+
+          recipe.save(function(err) {
+            if (err) {
+              recipeDeferred.resolve();
+            }
+          });
+        });
+
+      });
+    });
   });
 
-  grunt.registerTask('extract-ingredients', function() {
-    var raw = fs.readFileSync('./config/recipeitems-latest.json').toString().split('\n');
-    var file = '';
-    for (var i = 0; i < raw.length; i++) {
-      var json = JSON.parse(raw[i]);
-      var ingredients = json.ingredients.split('\n');
-      file += ingredients.join(' . ') + '\n';
-    }
 
-    fs.writeFileSync('./config/extraction.txt', file);
-  });
 
   grunt.registerTask('extract-types', function() {
     var connection = mongoose.connect(config.db);
@@ -177,7 +209,7 @@ module.exports = function (grunt) {
     Recipe.find().limit(200).exec(function(err, recipes) {
       for (var i = 0; i < recipes.length; i++) {
         _.each(recipes[i].ingredients, function(ingredient) {
-          IngredientParser.parseDescriptor(ingredient).then(function(type) {
+          IngredientParser.parseType(ingredient).then(function(type) {
             if (type) {
               type.save(function(err) {
                 console.error(err);
@@ -190,6 +222,30 @@ module.exports = function (grunt) {
       }
 
     });
+  });
+
+  grunt.registerTask('test', function() {
+    var connection = mongoose.connect(config.db);
+    var db = mongoose.connection;
+    db.on('error', function () {
+      throw new Error('unable to connect to database at ' + config.db);
+    });
+
+    var models = glob.sync(config.root + '/app/models/*.js');
+    models.forEach(function (model) {
+      require(model);
+    });
+
+    var done = this.async(),
+        Recipe = connection.model('Recipe'),
+        IngredientType = connection.model('IngredientType'),
+        Ingredient = connection.model('Ingredient');
+
+    Recipe.findOne(function(obj, obj2) {
+      IngredientType.findOne({_id: obj2.ingredients[0].type}, function(err, obj3) {
+        done();
+      });
+    })
   });
 
   grunt.registerTask('default', [

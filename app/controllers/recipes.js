@@ -3,8 +3,10 @@ var express = require('express'),
     generator = require('../procedures/generation/recipe-generator'),
     mongoose = require('mongoose'), 
     SavedRecipes = mongoose.model('SavedRecipes'),
-    Recipe = mongoose.model('Recipe');
-    moment = require('moment');
+    Recipe = mongoose.model('Recipe'),
+    IngredientType = mongoose.model('IngredientType'),
+    moment = require('moment'),
+    q = require('Q');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -13,11 +15,11 @@ module.exports = function (app) {
 router.get('/api/generate-recipes/:start/:end', function (req, res) {
   var start = moment(req.params.start),
       end = moment(req.params.end),
-      days = moment.duration(Math.abs(end.diff(start)));
+      duration = moment.duration(Math.abs(end.diff(start)));
 
-  generator.generate(days.days(), 0).then(function(recipes) {
+  generator.generate(duration.days(), 0).then(function(recipes) {
     var dates =  [];
-    _.each(_.range(0, days.days()), function() {
+    _.each(_.range(0, duration.days()), function() {
       dates.push(start.format('YYYY-MM-DD'));
       start.add(1, 'days');
     });
