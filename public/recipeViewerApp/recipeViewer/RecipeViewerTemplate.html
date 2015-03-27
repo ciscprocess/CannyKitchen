@@ -35,10 +35,10 @@
 
                                 <div ng-if="recipes.length" class="recipes-container">
 
-                                <ul>
-                            		<li ng-repeat="ingredient in recipe.ingredients track by $index">{{ ingredient }}</li>
-                                </ul>
-                                <!-- </div> -->
+                                    <ul>
+                                        <li ng-repeat="ingredient in recipe.prettyIngredients track by $index">{{ ingredient[1] }} units of {{ ingredient[0] }}</li>
+                                    </ul>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -84,6 +84,9 @@
             <button type="button" class="btn btn-default" ng-click="openEnd($event)"><i class="glyphicon glyphicon-calendar"></i></button>
         </span>
     </p>
+
+    <input style="width: 20%;" type="range" min="0" max="100" step="1" ng-model="similarity"/>
+    <p>Similarity Measure: {{ similarity }} / 100</p>
 
     <a class="btn btn-default" ng-click="fetchRecipes()">Generate Meal Plan!</a>
 </div>

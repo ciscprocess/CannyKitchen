@@ -8,6 +8,7 @@ var IngredientSchema = new Schema({
     ref: 'IngredientType'
   },
   amount: Number,
+  nameAlias: String,
   tags: Array
 });
 
@@ -16,4 +17,4 @@ IngredientSchema.virtual('date')
       return this._id.getTimestamp();
     });
 
-//mongoose.model('Ingredient', IngredientSchema);
+mongoose.model('Ingredient', IngredientSchema);

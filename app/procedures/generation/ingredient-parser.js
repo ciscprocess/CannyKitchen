@@ -156,5 +156,5 @@ var parse = function(descriptor) {
 };
 
 module.exports = {
-  parseDescriptor: parse
+  parseType: parse
 };

@@ -9,6 +9,7 @@
 
 		<link rel="stylesheet" href="/css/style.css">
 
+        <script src="/components/underscore/underscore-min.js"></script>
         <script src="/components/jquery/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/components/angular/angular.js"></script>

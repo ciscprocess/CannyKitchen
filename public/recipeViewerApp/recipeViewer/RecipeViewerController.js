@@ -20,7 +20,9 @@ angular.module('recipeViewerApp').controller('RecipeViewerController', function(
     $scope.startOpened = true;
   };
 
-  $scope.openEnd= function($event) {
+  $scope.similarity = 25;
+
+  $scope.openEnd = function($event) {
     $event.preventDefault();
     $event.stopPropagation();
 
@@ -37,7 +39,7 @@ angular.module('recipeViewerApp').controller('RecipeViewerController', function(
     var start = $filter('date')($scope.dateStart, 'yyyy-M-dd');
     var end = $filter('date')($scope.dateEnd, 'yyyy-M-dd');
 
-    $http.get('/api/generate-recipes/' + start + '/' + end).
+    $http.get('/api/generate-recipes/' + start + '/' + end + '/' + $scope.similarity).
         success(function(data) {
           $scope.recipes = data.recipes;
           $scope.dates = data.dates;
