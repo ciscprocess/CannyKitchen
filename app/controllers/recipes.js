@@ -41,6 +41,18 @@ router.get('/api/user-stuff', function (req, res) {
   });
 });
 
+router.get('/api/savedmeals', function (req, res) {
+  SavedRecipes.find({ username: req.session.username }, function (err, recipes) {
+    if (recipes) {
+      res.send({
+        title: "My Meal Plans", 
+        name: req.session.username,
+        mealplan: recipes
+      });
+    }
+  });
+});
+
 router.get('/savedmeals', function (req, res) {
   SavedRecipes.find({ username: req.session.username }, function (err, recipes) {
     if (recipes) {
@@ -68,4 +80,10 @@ router.post('/savedmeals', function (req, res) {
     if (err) res.send('Error');
     res.redirect('/savedmeals');
   });
+});
+
+router.post('/delete-meals', function (req, res) {
+  var mealplan = req.body.mealplan;
+  SavedRecipes.find({ _id: mealplan }).remove().exec();
+  res.redirect('/savedmeals');
 });

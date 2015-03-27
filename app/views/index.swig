@@ -21,7 +21,6 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="/">Links</a></li>
                     {% if name %}
                         <li><a href="/savedmeals">My Meal Plans</a>
                         <li><a href="/logout">Logout</a></li>
@@ -43,30 +42,17 @@
                 <div ng-app="" ng-controller="IngredientListController">
                     <p>Search for your ingredients</p>
                     <input ng-keypress="enter($event)" placeholder="Search" list="list" name="ingredients" ng-model="Ingredients"/>
-                    <datalist id="list">
-                        <option value="Apple">
-                        <option value="Banana">
-                        <option value="Cabbage">
-                        <option value="Dandelion">
-                        <option value="Egg">
-                        <option value="Fennel">
-                        <option value="Grape">
-                        <option value="Icing">
-                        <option value="Jam">
-                        <option value="Ketchup">
+
+                    <datalist id="list" ng-if="ingredient_list">
+                        <option ng-repeat="i in ingredient_list" value="{% raw %} {{ i }} {% endraw %}">
                     </datalist>
+
                     <button ng-click="addQuery()">Submit</button>
                     <p>Ingredient Lists</p>
-                    <!--<ul>
-                        <li ng-repeat="item in items"> {% raw %} {{ item }} {% endraw %} </li>
-                    </ul>-->
-                    <pre>Ingredients={% raw %} {{ items }} {% endraw %}</pre>
 
-                    <select size=10 STYLE="width: 300px">
+                    <select size="10" multiple="multiple" style="width: 300px">
                         <option ng-repeat="item in items">{% raw %} {{ item }} {% endraw %}</option>
                     </select>
-
-                    <p>Selected Colors: {% raw %}{{ selectedIngredients }}{% endraw %}</p>
 
                     <!--<div class="array">
                         <p>Ingredients:</p>

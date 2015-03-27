@@ -1,8 +1,8 @@
 angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $http) {
-    $scope.items = ['a', 'b'];
+    $scope.items = [];
     $scope.itemLimit = 12;
-    $scope.text = 'item';
     $scope.users = $scope.items;
+    $scope.ingrendient_list = [];
 
     $scope.addQuery = function(e) {
         if ($scope.Ingredients) {
@@ -27,4 +27,9 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         alert("Are you sure you want to delete all ingredients?");
         $scope.items.length = 0;
     };
+
+    $http.get('/api/ingredient-names').
+    	success(function(data) {
+    		$scope.ingredient_list = data.ingredients;
+    	});
 });
