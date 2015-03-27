@@ -28,7 +28,6 @@ var requestRandom = function(howMany) {
   var deferred = q.defer();
 
   Recipe.find({
-    selectionToken: { $gt: Math.random() },
     'ingredients.0': { $exists: true }
   }).sort({ selectionToken: 1 })
     .limit(howMany)

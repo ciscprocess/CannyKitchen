@@ -4,6 +4,11 @@ var recipeProvider = require('../../providers/recipe-provider'),
     sampleSize = 100,
     sampleCount = 100;
 
+var config = {
+  diffPenalty: 100,
+  lengthPenalty: 100
+};
+
 var ingredDist = function(i1, i2) {
   var dist = 0.0;
   for (var i = 0; i < Math.min(i1.length, i2.length); i++) {
@@ -11,7 +16,7 @@ var ingredDist = function(i1, i2) {
     if (first._id.valueOf() == second._id.valueOf()) {
       dist += Math.abs(first.amount - second.amount);
     } else {
-      dist += (first.amount + second.amount) * 100;
+      dist += (first.amount + second.amount) * config.diffPenalty;
     }
   }
 
@@ -34,7 +39,6 @@ var distance = function(r1, r2, sampleCount) {
   var penalty = r1._id.valueOf() == r2._id.valueOf() ? 100 : 0;
   var lengthDiff = Math.abs(r1.ingredients.length - r2.ingredients.length);
   var editSize = Math.min(r1.ingredients.length, r2.ingredients.length);
-  var poolSize = Math.max(r1.ingredients.length, r2.ingredients.length);
   var larger = r1.ingredients.length > r2.ingredients.length ? r1 : r2;
   var smaller = r1.ingredients.length <= r2.ingredients.length ? r1 : r2;
   var samples = [];
@@ -49,28 +53,47 @@ var distance = function(r1, r2, sampleCount) {
     numerator += d;
   });
 
-  return lengthDiff + numerator / samples.length + penalty;
+  return lengthDiff * config.lengthPenalty + numerator / samples.length + penalty;
 };
 
-var generate = function(amount) {
+var choosePermute = function(amount, recipes) {
+  var permutations = [];
+
+  function inner(arr, index) {
+    if (index >= amount) {
+      permutations.push(arr);
+      return;
+    }
+
+    for (var r = 0; r < recipes.length; r++) {
+      if (index < amount) {
+        var arr2 = arr.concat([recipes[r]]);
+        inner(arr2, index + 1);
+      }
+    }
+
+    return;
+  }
+
+  inner([], 0);
+
+  return permutations;
+};
+
+var generate = function(amount, similarity) {
+  similarity = parseFloat(similarity);
+  config.diffPenalty = similarity;
+  config.lengthPenalty = similarity;
+
   var recipeResult = recipeProvider.randomly(sampleSize);
   var done = recipeResult.then(function(recipes) {
-
-
-    var current = _.times(sampleCount * 40, function() {
+    var current = _.times(sampleCount * 1000, function() {
       return _.times(amount, function() {
         return _.sample(recipes, 1)[0];
       });
     });
 
-    var m;
-    try {
-      m = _.min(current, sampleError);
-    } catch (ex) {
-      console.log(ex);
-    }
-
-    return m;
+    return _.min(current, sampleError);
   });
   return done;
 };

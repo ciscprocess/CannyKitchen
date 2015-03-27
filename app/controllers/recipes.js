@@ -12,12 +12,13 @@ module.exports = function (app) {
   app.use('/', router);
 };
 
-router.get('/api/generate-recipes/:start/:end', function (req, res) {
+router.get('/api/generate-recipes/:start/:end/:similarity', function (req, res) {
   var start = moment(req.params.start),
       end = moment(req.params.end),
+      similarity = req.params.similarity,
       duration = moment.duration(Math.abs(end.diff(start)));
 
-  generator.generate(duration.days(), 0).then(function(recipes) {
+  generator.generate(duration.days(), similarity).then(function(recipes) {
     var dates =  [];
     _.each(_.range(0, duration.days()), function() {
       dates.push(start.format('YYYY-MM-DD'));

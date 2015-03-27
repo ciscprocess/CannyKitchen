@@ -141,7 +141,7 @@ module.exports = function (grunt) {
           ingredientPromises = [];
       _(list).each(function() {
         var ingredients = [],
-            count = _.random(3, 35),
+            count = _.random(3, 18),
             sample = _.sample(types, count);
         _(sample).each(function(it) {
           var iDeferred = q.defer();
