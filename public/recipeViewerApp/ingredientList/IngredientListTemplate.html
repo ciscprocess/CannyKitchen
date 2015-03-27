@@ -6,13 +6,12 @@
             <p>Add ingredients that you already have or wish to use to the list below.</p>
         </div>
         <div class="ingredient-list" ng-controller="IngredientListController">
-            <datalist id="list">
-                <option ng-repeat="suggestion in suggestions" value="{{ suggestion }}">
-            </datalist>
-
             <p>Search for your ingredients:</p>
 
             <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+            <datalist id="list" ng-if="ingredient_list">
+                <option ng-repeat="i in ingredient_list" value="{{ i }}">
+            </datalist>
 
             <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
 

@@ -1,9 +1,10 @@
 angular.module('recipeViewerApp').controller('RecipeViewerController', function($scope, $http, $filter) {
   $scope.recipes = [];
   $scope.user = "";
+  $scope.meals = [];
 
   $scope.format = 'dd-MMMM-yyyy';
-
+;
   $scope.dateStart = new Date();
   $scope.dateEnd = new Date();
 
@@ -51,4 +52,18 @@ angular.module('recipeViewerApp').controller('RecipeViewerController', function(
       $scope.user = data.user;
     });
     
+  $http.get('/api/savedmeals'). 
+    success(function(data) {
+      $scope.meals = data.mealplan;
+    });
+
+  $scope.deleteMeal = function(index, meal) {
+    // alert(meal);
+
+    $http.post('/delete-meals', {mealplan: meal}).
+      success(function(data) {
+        $scope.meals.splice(index, 1);
+      });
+  };
+
 });

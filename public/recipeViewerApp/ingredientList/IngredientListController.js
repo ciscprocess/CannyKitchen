@@ -1,19 +1,10 @@
-angular.module('recipeViewerApp', ['ui.bootstrap']).controller('IngredientListController', function($scope, $modal) {
-    $scope.ingredients = [];
+angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $http) {
+    $scope.items = [];
     $scope.itemLimit = 12;
+    $scope.users = $scope.items;
+    $scope.ingredient_list = [];
+    $scope.ingredients = [];
     $scope.text = 'item';
-
-    $scope.suggestions = [
-        'Apple',
-        'Banana',
-        'Cabbage',
-        'Dandelion',
-        'Egg',
-        'Fennel',
-        'Grape',
-        'Icing',
-        'Jam',
-        'Ketchup'];
 
     $scope.addQuery = function(e) {
         if ($scope.items) {
@@ -71,4 +62,9 @@ angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($sco
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');
     };
+
+    $http.get('/api/ingredient-names').
+    	success(function(data) {
+    		$scope.ingredient_list = data.ingredients;
+    	});
 });
