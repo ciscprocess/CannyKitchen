@@ -1,0 +1,32 @@
+<div ng-controller="IngredientListController">
+    <aside class="well sidebar-nav sidebar-custom">
+        <div class="intro">
+            <h2>Instructions</h2>
+            <hr>
+            <p>Add ingredients that you already have or wish to use to the list below.</p>
+        </div>
+        <div class="ingredient-list" ng-controller="IngredientListController">
+            <p>Search for your ingredients:</p>
+
+            <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+            <datalist id="list" ng-if="ingredient_list">
+                <option ng-repeat="i in ingredient_list" value="{{ i }}">
+            </datalist>
+
+            <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
+
+            <p>Ingredient Lists:</p>
+            <pre>Ingredients= {{ ingredients }} </pre>
+            <select ng-model="ingredient" ng-options="i as i for i in ingredients" size=10 STYLE="width: 300px">
+            </select>
+
+            <p>Selected Ingredients: {{ ingredient }} </p>
+
+            <a class="btn btn-default" ng-click="remove(ingredient)">Remove</a>
+            <a class="btn btn-default" ng-click="reset()">Reset</a>
+        </div>
+        <div class="description">
+            <p>After placing all your ingredients at the list, click "Generate Meal Plan" button at right to receive your available recipes. It's simple!</p>
+        </div>
+    </aside>
+</div>

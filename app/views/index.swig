@@ -1,6 +1,3 @@
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
 {% extends 'layout.swig' %}
 {% block content %}
     <!-- Navigation -->
@@ -35,38 +32,8 @@
 
     {% block pageContent %}
         <div class="container main-container" ng-app="recipeViewerApp">
-            <aside class="sidebar">
-                <div class="intro">
-                    <p>Search the ingredients you have and plan to use at the search bar. It will then add the ingredients to the box below.</p>
-                </div>
-                <div ng-app="" ng-controller="IngredientListController">
-                    <p>Search for your ingredients</p>
-                    <input ng-keypress="enter($event)" placeholder="Search" list="list" name="ingredients" ng-model="Ingredients"/>
-
-                    <datalist id="list" ng-if="ingredient_list">
-                        <option ng-repeat="i in ingredient_list" value="{% raw %} {{ i }} {% endraw %}">
-                    </datalist>
-
-                    <button ng-click="addQuery()">Submit</button>
-                    <p>Ingredient Lists</p>
-
-                    <select size="10" multiple="multiple" style="width: 300px">
-                        <option ng-repeat="item in items">{% raw %} {{ item }} {% endraw %}</option>
-                    </select>
-
-                    <!--<div class="array">
-                        <p>Ingredients:</p>
-                            <select name="input" multiple="multiple" size=10 width=200 STYLE="width: 200px" ng-controller="IngredientListController">
-                                <option value="input">empty</option>
-                            </select>-->
-                    <button ng-click="remove()">Remove</button>
-                    <button ng-click="reset()">Reset</button>
-                </div>
-                <div class="description">
-                    <p>After putting all your ingredients, click "Generate Meal Plan" button at right to receive your available recipes. It's simple!</p>
-                </div>
-            </aside>
+            <div ng-include="'/recipeViewerApp/ingredientList/IngredientListTemplate.html'"></div>
             <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
         </div>
     {% endblock %}
-    {% endblock %}
+{% endblock %}
