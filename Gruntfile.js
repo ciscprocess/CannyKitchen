@@ -148,6 +148,7 @@ module.exports = function (grunt) {
 
           var ingredient = new Ingredient({
             type: it,
+            nameAlias: it.normalizedName,
             amount: _.random(1, 5),
             tags: []
           });
@@ -163,6 +164,9 @@ module.exports = function (grunt) {
         });
 
         q.all(ingredientPromises).then(function() {
+          ingredients = _.sortBy(ingredients, function(e) {
+            return e.nameAlias;
+          });
           var recipeDeferred = q.defer(),
               recipe = new Recipe({
                 name: _.random(900000).toString(),

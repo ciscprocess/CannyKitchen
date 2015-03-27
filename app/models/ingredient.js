@@ -8,6 +8,7 @@ var IngredientSchema = new Schema({
     ref: 'IngredientType'
   },
   amount: Number,
+  nameAlias: String,
   tags: Array
 });
 
