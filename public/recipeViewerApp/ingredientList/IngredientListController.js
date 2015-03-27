@@ -1,4 +1,4 @@
-angular.module('recipeViewerApp').controller('IngredientListController', function($scope) {
+angular.module('recipeViewerApp', ['ui.bootstrap']).controller('IngredientListController', function($scope, $modal) {
     $scope.ingredients = [];
     $scope.itemLimit = 12;
     $scope.text = 'item';
@@ -36,9 +36,39 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         }
     };
     $scope.reset = function() {
-        var answer = confirm ("Are you sure you want to delete all ingredients?");
-        if (answer) {
-            $scope.ingredients = [];
-        };
+        $scope.ingredients = [];
+
+    };
+
+    $scope.open = function (size) {
+        var modalInstance = $modal.open({
+            templateUrl: 'reset.html',
+            controller: 'ModalInstanceCtrl',
+            size: size,
+            resolve: {
+                ingredients: function () {
+                    return $scope.ingredients;
+                }
+            }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+           $scope.reset();
+        }, function () {
+            //$log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+});
+
+angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, ingredients) {
+    $scope.ingredients = ingredients;
+    $scope.selected = {
+        ingredients: $scope.ingredients[0]
+    };
+    $scope.ok = function () {
+        $modalInstance.close();
+    };
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
     };
 });
