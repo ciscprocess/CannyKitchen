@@ -2,7 +2,8 @@ var recipeProvider = require('../../providers/recipe-provider'),
     parser = require('./ingredient-parser'),
     q = require('q'),
     sampleSize = 100,
-    sampleCount = 100;
+    sampleCount = 100,
+    sampleMultiplier = 1000;
 
 var config = {
   diffPenalty: 100,
@@ -87,7 +88,7 @@ var generate = function(amount, similarity) {
 
   var recipeResult = recipeProvider.randomly(sampleSize);
   var done = recipeResult.then(function(recipes) {
-    var current = _.times(sampleCount * 1000, function() {
+    var current = _.times(sampleCount * sampleMultiplier, function() {
       return _.times(amount, function() {
         return _.sample(recipes, 1)[0];
       });
