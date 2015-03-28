@@ -27,6 +27,7 @@ This is as easy as the last step.
 
 ### Run a Local MongoDB Instance
 For this sprint, the MongoCloud data will not work. Therefore, it is recommended that you run a local MongoDB instance at port 3000. This can be easily done by running:
+
 	mongod --dbpath /path/to/empty/folder
 
 where the 'dbpath' parameter can be of your choosing (though it should be consistent between runs).
