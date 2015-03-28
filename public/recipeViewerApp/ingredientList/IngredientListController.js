@@ -1,10 +1,13 @@
-angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $http) {
+angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $modal, $http) {
     $scope.items = [];
     $scope.itemLimit = 12;
     $scope.users = $scope.items;
     $scope.ingredient_list = [];
     $scope.ingredients = [];
     $scope.text = 'item';
+    $scope.selected = {
+      ingredients: $scope.ingredients[0]
+    };
 
     $scope.addQuery = function(e) {
         if ($scope.items) {
@@ -31,6 +34,12 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
 
     };
 
+
+    $http.get('/api/ingredient-names').
+      success(function(data) {
+        $scope.ingredient_list = data.ingredients;
+      });
+
     $scope.open = function (size) {
         var modalInstance = $modal.open({
             templateUrl: 'reset.html',
@@ -53,9 +62,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
 
 angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, ingredients) {
     $scope.ingredients = ingredients;
-    $scope.selected = {
-        ingredients: $scope.ingredients[0]
-    };
+
     $scope.ok = function () {
         $modalInstance.close();
     };
@@ -63,8 +70,4 @@ angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($sco
         $modalInstance.dismiss('cancel');
     };
 
-    $http.get('/api/ingredient-names').
-    	success(function(data) {
-    		$scope.ingredient_list = data.ingredients;
-    	});
 });
