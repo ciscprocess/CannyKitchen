@@ -1,6 +1,9 @@
 var express = require('express'),
     router = express.Router(),
-    generator = require('../procedures/generation/recipe-generator');
+    generator = require('../procedures/generation/recipe-generator'),
+    mongoose = require('mongoose'),
+    SavedRecipes = mongoose.model('SavedRecipes'),
+    Recipe = mongoose.model('Recipe');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -13,7 +16,8 @@ router.get('/view-recipes/:start/:end', function (req, res) {
   generator.generate(end - start, 0).then(function(recipes) {
     res.render('view-recipes', {
       recipes: recipes,
-      start: start
+      start: start,
+      name: req.session.username
     });
   });
 });

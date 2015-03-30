@@ -22,6 +22,7 @@ body {
   border-bottom:0px solid #fff;
   border-right:0px solid #fff;
   color: #000;
+  overflow: auto;
 }
 
 .intro {
@@ -99,6 +100,10 @@ a:hover, a:focus {
   text-align: center;
   margin-top: 25px;
   overflow-x: scroll;
+
+  th, td {
+    background-color: white;
+  }
 }
 
 .recipe-thumbnail {
@@ -112,6 +117,10 @@ a:hover, a:focus {
   background-color: #f5f5f5;
 
   p {
+    color: black;
+  }
+
+  h1 {
     color: black;
   }
 
@@ -129,8 +138,6 @@ a:hover, a:focus {
   margin-top: 30px;
   margin-left: 360px;
 }
-
-
 
 .button-custom {
   position: relative;
@@ -165,3 +172,21 @@ a:hover, a:focus {
     color: blue;
   }
 }
+
+.modal {
+  display: block;
+}
+
+/* Custom dialog/modal headers */
+
+.dialog-header-error { background-color: #d2322d; }
+.dialog-header-wait { background-color: #428bca; }
+.dialog-header-notify { background-color: #eeeeee; }
+.dialog-header-confirm { background-color: #333333; }
+.dialog-header-error span, .dialog-header-error h4,
+.dialog-header-wait span, .dialog-header-wait h4,
+.dialog-header-confirm span, .dialog-header-confirm h4 { color: #ffffff; }
+
+/* Ease Display */
+
+.pad { padding: 25px; }

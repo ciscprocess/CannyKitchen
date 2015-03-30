@@ -18,11 +18,11 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="/">Links</a></li>
                     {% if name %}
-                        <li><a href="logout">Logout</a></li>
+                        <li><a href="/savedmeals">My Meal Plans</a>
+                        <li><a href="/logout">Logout</a></li>
                     {% else %}
-                        <li><a href="login">Login</a></li>
+                        <li><a href="/login">Login</a></li>
                     {% endif %}
                     <!-- <li><a href="signup.html">Signup</a></li> -->
                 </ul>

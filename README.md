@@ -25,12 +25,18 @@ This is as easy as the last step.
 
 	bower install
 
+### Run a Local MongoDB Instance
+For this sprint, the MongoCloud data will not work. Therefore, it is recommended that you run a local MongoDB instance at the default port. This can be easily done by running:
+
+	mongod --dbpath /path/to/empty/folder
+
+where the 'dbpath' parameter can be of your choosing (though it should be consistent between runs).
+	
 ### Seed the Database
-This step shouldn't be necessary for Sprint 1, since the remote database is by default used. If, however, you wish to use a local MongoDB instance, run the following before attempting to run the application:
+To fill your database with test recipe data, run the following command at a console in the root directory of the project:
 
 	grunt seed-recipes
 
-A completion indicator, in percent units, should appear.
 
 ### Run the Express Server
 Now that the initial set up has been performed, the app should now be runnable. At the terminal, simply run grunt:

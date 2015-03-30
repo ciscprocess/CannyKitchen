@@ -1,8 +1,9 @@
 var express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
-	User = mongoose.model('User');
-	/*bcrypt = require('bcrypt');*/
+	User = mongoose.model('User'),
+	bcrypt = require('bcrypt');
+
 var sess;
 
 module.exports = function (app) {

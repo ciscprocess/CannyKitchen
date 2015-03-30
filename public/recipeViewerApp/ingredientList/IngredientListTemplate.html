@@ -6,26 +6,44 @@
             <p>Add ingredients that you already have or wish to use to the list below.</p>
         </div>
         <div class="ingredient-list" ng-controller="IngredientListController">
-            <datalist id="list">
-                <option ng-repeat="suggestion in suggestions" value="{{ suggestion }}">
-            </datalist>
-
             <p>Search for your ingredients:</p>
 
             <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+            <datalist id="list" ng-if="ingredient_list">
+                <option ng-repeat="i in ingredient_list" value="{{ i }}">
+            </datalist>
 
             <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
 
             <p>Ingredient Lists:</p>
             <pre>Ingredients= {{ ingredients }} </pre>
-            <select ng-model="ingredient" ng-options="i as i for i in ingredients" size=10 STYLE="width: 300px">
+            <select ng-model="ingredient" ng-options="i for i in ingredients" size=10 STYLE="width: 300px">
             </select>
 
             <p>Selected Ingredients: {{ ingredient }} </p>
 
             <a class="btn btn-default" ng-click="remove(ingredient)">Remove</a>
-            <a class="btn btn-default" ng-click="reset()">Reset</a>
+            <a class="btn btn-default" href ng-click="open()">Reset</a>
+            <!--<a class="btn btn-default" ng-click="reset()">Reset</a>-->
         </div>
+
+        <script type="text/ng-template" id="reset.html">
+            <div class="modal-header">
+                <h3>Remove Ingredient</h3>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure that you want to remove all the ingredients?</p>
+                <ul>
+                    <li ng-repeat="i in ingredients track by $index">
+                        <a ng-click="selected.ingredients = ingredients">{{ ingredient }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default button-custom" ng-click="ok()">OK</button>
+                <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
         <div class="description">
             <p>After placing all your ingredients at the list, click "Generate Meal Plan" button at right to receive your available recipes. It's simple!</p>
         </div>

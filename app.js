@@ -5,6 +5,9 @@ var express = require('express'),
     swig = require('swig'),
     session = require('express-session');
 
+// setting global libraries
+GLOBAL._ = require('underscore');
+
 swig.setDefaults({
     locals: {
       config: config

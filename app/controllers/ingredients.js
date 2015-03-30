@@ -2,7 +2,8 @@ var express = require('express'),
     router = express.Router(),
     ingredientProvider = require('../providers/ingredient-provider.js'),
     mongoose = require('mongoose'),
-    Recipe = mongoose.model('Recipe');
+    Recipe = mongoose.model('Recipe'),
+    IngredientType = mongoose.model('IngredientType');
 
 module.exports = function (app) {
   app.use('/', router);
@@ -10,7 +11,7 @@ module.exports = function (app) {
 
 router.get('/api/ingredients/keyword/:keyword', function (req, res) {
   var keyword = req.params.keyword;
-  Recipe.fromWebCall();
+
   ingredientProvider.byName(keyword).then(function(ingredients) {
     res.json(ingredients);
   });
@@ -21,4 +22,14 @@ router.get('/api/ingredients', function (req, res) {
     res.send({
         itm: food
     });
+});
+
+router.get('/api/ingredient-names', function (req, res) {
+  IngredientType.distinct("normalizedName", function (err, ingredients) {
+    if (ingredients) {
+      res.send({
+        ingredients: ingredients
+      });
+    }
+  });
 });

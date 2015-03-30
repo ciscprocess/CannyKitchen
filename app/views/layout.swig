@@ -9,10 +9,12 @@
 
 		<link rel="stylesheet" href="/css/style.css">
 
+        <script src="/components/underscore/underscore-min.js"></script>
         <script src="/components/jquery/jquery.min.js"></script>
 		<script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/components/angular/angular.js"></script>
-
+        <script src="/components/angular-bootstrap/ui-bootstrap.min.js"></script>
+        <script src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <script src="/recipeViewerApp/config.js"></script>
         <script src="/recipeViewerApp/recipeViewer/RecipeViewerController.js"></script>
         <script src="/recipeViewerApp/ingredientList/IngredientListController.js"></script>
