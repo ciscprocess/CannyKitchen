@@ -15,7 +15,7 @@ var config = {
       }
     },
     port: 3000,
-    db:'mongodb://localhost/CannyKitchen-development'
+    db:'mongodb://cannykitchen:cs4911@ds041581.mongolab.com:41581/cannykitchen'
   },
 
   test: {
