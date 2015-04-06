@@ -1,6 +1,7 @@
 angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $modal, $http) {
     $scope.items = [];
     $scope.itemLimit = 12;
+    $scope.amount = 1;
     $scope.users = $scope.items;
     $scope.ingredient_list = [];
     $scope.ingredients = [];
@@ -11,7 +12,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
 
     $scope.addQuery = function(e) {
         if ($scope.items) {
-            $scope.ingredients.push($scope.items);
+            $scope.ingredients.push({name: $scope.items, amount: $scope.amount});
             $scope.items = '';
         }
     };
