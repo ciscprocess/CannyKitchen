@@ -8,12 +8,18 @@
         <div class="ingredient-list" ng-controller="IngredientListController">
             <p>Search for your ingredients:</p>
 
-            <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+
+
+            <div>
+                <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+                <input type="number" style="width: 40px;" />
+                <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
+            </div>
             <datalist id="list" ng-if="ingredient_list">
                 <option ng-repeat="i in ingredient_list" value="{{ i }}">
             </datalist>
 
-            <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
+
 
             <p>Ingredient Lists:</p>
             <pre>Ingredients= {{ ingredients }} </pre>
