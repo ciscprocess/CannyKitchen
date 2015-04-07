@@ -49,29 +49,61 @@ var requestRandom = function(howMany) {
 
   var queryPromises = [];
   var theRecipes = [];
+  var typeDeferred = q.defer();
+  queryPromises.push(typeDeferred.promise);
   deferred.promise.then(function(recipes) {
     theRecipes = recipes;
-    _.each(recipes, function(recipe, key) {
-      var types = _.pluck(recipe.ingredients, 'type');
-      var amounts = _.pluck(recipe.ingredients, 'amount');
-      var deferred2 = q.defer();
+    IngredientType.find().sort({ _id: 1 }).exec(function(err, ingredientTypes) {
+      _.each(recipes, function(recipe, key) {
+        var types = _.pluck(recipe.ingredients, 'type');
+        var amounts = _.pluck(recipe.ingredients, 'amount');
+        var deferred2 = q.defer();
 
-      queryPromises.push(deferred2.promise);
-      IngredientType.find({_id: { $in: types }}, function(err, list) {
-        recipe.prettyIngredients = _.zip(_.pluck(list, 'normalizedName'), amounts);
-        deferred2.resolve();
+        queryPromises.push(deferred2.promise);
+        IngredientType.find({_id: { $in: types }}, function(err, list) {
+          recipe.prettyIngredients = _.zip(_.pluck(list, 'normalizedName'), amounts);
+          deferred2.resolve();
+        });
+
+        var vector = [];
+        _.each(ingredientTypes, function(ingredientType, index) {
+          var incident = _.find(recipe.ingredients, function(val) {
+            return val.type.equals(ingredientType._id);
+          });
+          if (incident) {
+            vector[index] = incident.amount;
+          } else {
+            vector[index] = 0;
+          }
+        });
+
+        recipe.vector = vector;
       });
+
+      typeDeferred.resolve();
     });
+
   });
 
-  return deferred.promise.then(function() {
+  return typeDeferred.promise.then(function() {
     return q.all(queryPromises);
   }).then(function() {
     return theRecipes;
   });
 };
 
+var getIngredientsVectors = function(recipes) {
+  Recipe.find({
+    'ingredients.0': { $exists: true }
+  }).sort({
+    selectionToken: 1
+  }).exec(function(error, recipes) {
+
+  });
+};
+
 module.exports = {
   byName: requestByName,
-  randomly: requestRandom
+  randomly: requestRandom,
+  ingredientsVector: getIngredientsVectors
 };
