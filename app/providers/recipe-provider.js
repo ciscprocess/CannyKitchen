@@ -88,7 +88,7 @@ var requestRandom = function(howMany) {
   return typeDeferred.promise.then(function() {
     return q.all(queryPromises);
   }).then(function() {
-    return theRecipes;
+    return _.shuffle(theRecipes);
   });
 };
 

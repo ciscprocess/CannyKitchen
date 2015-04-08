@@ -136,12 +136,12 @@ module.exports = function (grunt) {
     });
 
     q.all(typePromises).then(function() {
-      var list = _.range(100),
+      var list = _.range(1000),
           recipePromises = [],
           ingredientPromises = [];
       _(list).each(function() {
         var ingredients = [],
-            count = _.random(3, 18),
+            count = _.random(3, 10),
             sample = _.sample(types, count);
         _(sample).each(function(it) {
           var iDeferred = q.defer();
