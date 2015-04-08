@@ -2,13 +2,13 @@
     <aside class="well sidebar-nav sidebar-custom">
         <div class="intro">
             <h2>Instructions</h2>
-            <hr>
+            <!--<hr>-->
             <p>Add ingredients that you already have or wish to use to the list below.</p>
         </div>
         <div class="ingredient-list" ng-controller="IngredientListController">
             <p>Search for your ingredients:</p>
 
-            <input ng-keypress="enter($event)" placeholder="Search" list="list" name="search" ng-model="items"/>
+            <input ng-keypress="enter($event)" id="searchbox" placeholder="Search" list="list" name="search" ng-model="items"/>
             <datalist id="list" ng-if="ingredient_list">
                 <option ng-repeat="i in ingredient_list" value="{{ i }}">
             </datalist>
@@ -16,7 +16,7 @@
             <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
 
             <p>Ingredient Lists:</p>
-            <pre>Ingredients= {{ ingredients }} </pre>
+            <!--<pre>Ingredients= {{ ingredients }} </pre>-->
             <select ng-model="ingredient" ng-options="i for i in ingredients" size=10 STYLE="width: 300px">
             </select>
 
@@ -37,14 +37,14 @@
                 <p>Are you sure that you want to delete this ingredient?</p>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-default button-custom" ng-click="reset()">OK</button>
+                <button class="btn btn-default button-custom" ng-click="ok()">OK</button>
                 <button class="btn btn-default" ng-click="cancel()">Cancel</button>
             </div>
         </script>
 
         <script type="text/ng-template" id="reset.html">
             <div class="modal-header">
-                <h3>Remove Ingredient</h3>
+                <h3>Reset Ingredients</h3>
             </div>
             <div class="modal-body">
                 <p>Are you sure that you want to remove all the ingredients?</p>
@@ -55,7 +55,7 @@
                 </ul>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-default button-custom" ng-click="remove($index)">OK</button>
+                <button class="btn btn-default button-custom" ng-click="ok()">OK</button>
                 <button class="btn btn-default" ng-click="cancel()">Cancel</button>
             </div>
         </script>

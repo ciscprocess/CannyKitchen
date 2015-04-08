@@ -29,11 +29,8 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     };
 
     $scope.remove = function(item) {
-        var answer = confirm("Are you sure you want to delete this ingredient?");
-        if (answer) {
-            var index = $scope.ingredients.indexOf(item);
-            $scope.ingredients.splice(index, 1);
-        }
+        var index = $scope.ingredients.indexOf(item);
+        $scope.ingredients.splice(index, 1);
     };
 
     $scope.reset = function() {
@@ -78,7 +75,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         });
 
         modalInstance.result.then(function (selectedItem) {
-            $scope.remove("ingredients");
+            $scope.remove("ingredient");
         }, function () {
             //$log.info('Modal dismissed at: ' + new Date());
         });
