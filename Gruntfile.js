@@ -96,80 +96,94 @@ module.exports = function (grunt) {
 
 
   grunt.registerTask('seed-recipes', function() {
-    var connection = mongoose.connect(config.db);
-    var db = mongoose.connection;
+    // connect to the database
+    var connection = mongoose.connect(config.db),
+        db = mongoose.connection;
+
     db.on('error', function () {
       throw new Error('unable to connect to database at ' + config.db);
     });
 
+    // include all the models since the init scripts are not run in the GruntJS environment
     var models = glob.sync(config.root + '/app/models/*.js');
     models.forEach(function (model) {
       require(model);
     });
 
+    // set this task as asynchronous and get models
     var done = this.async(),
         Recipe = connection.model('Recipe'),
         IngredientType = connection.model('IngredientType'),
         Ingredient = connection.model('Ingredient');
 
-    var typePromises = [];
+    // read in the established ingredient types
+    var typesFile = fs.readFileSync('config/juicein.json').toString();
 
-    var namesFile = fs.readFileSync('config/juicein.json').toString();
+    // since each line is a JSON object, parse each line separately
+    var rawTypes = _.map(typesFile.split('\n'), JSON.parse),
+        typePromises = [];
 
-    // first, seed the sample ingredient types
-    var names = _.map(namesFile.split('\n'), JSON.parse),
-        types = [];
-
-    _(names).each(function(name) {
+    // for each raw ingredient type, create a model instance and add it to the DB
+    _.each(rawTypes, function(type) {
       var deferred = q.defer();
-      var type = new IngredientType({
-        normalizedName: name.normalizedName,
+      var newType = new IngredientType({
+        normalizedName: type.normalizedName,
         aliases: []
       });
 
       typePromises.push(deferred.promise);
 
-      type.save(function() {
-        types.push(type);
-        deferred.resolve();
+      newType.save(function(err) {
+        err ? deferred.reject(err) : deferred.resolve(newType);
       });
     });
 
-    q.all(typePromises).then(function() {
-      var list = _.range(1000),
-          recipePromises = [],
-          ingredientPromises = [];
-      _(list).each(function() {
-        var ingredients = [],
-            count = _.random(3, 10),
-            sample = _.sample(types, count);
-        _(sample).each(function(it) {
+    var seedRecipes = _.noop();
+    q.all(typePromises).then(function(values) {
+      seedRecipes(values);
+    }, function(err) {
+      console.error('Failure ' + err);
+    });
+
+    seedRecipes = function(types) {
+      // run the recipe generation routine for a given number of times
+      var numberOfRecipes = 5000,
+          recipePromises = [];
+      _.times(numberOfRecipes, function() {
+        // number of ingredients the recipe should have
+        var count = _.random(3, 10),
+            // randomly sampled ingredients
+            sample = _.sample(types, count),
+            promises = [];
+
+        var recipeDeferred = q.defer();
+        recipePromises.push(recipeDeferred.promise);
+
+        // for each type sampled, generate an ingredient reference
+        _.each(sample, function(type) {
           var iDeferred = q.defer();
 
           var ingredient = new Ingredient({
-            type: it,
-            nameAlias: it.normalizedName,
+            type: type,
+            nameAlias: type.normalizedName,
             amount: _.random(1, 5),
             tags: []
           });
 
-          ingredientPromises.push(iDeferred.promise);
+          promises.push(iDeferred.promise);
 
           ingredient.save(function(err) {
             if (!err) {
-              ingredients.push(ingredient);
-              iDeferred.resolve();
+              iDeferred.resolve(ingredient);
+            } else {
+              iDeferred.reject(err);
             }
           });
         });
 
-        q.all(ingredientPromises).then(function() {
-          ingredients = _.sortBy(ingredients, function(e) {
-            return e.nameAlias;
-          });
-          var recipeDeferred = q.defer(),
-              recipe = new Recipe({
-                name: _.random(900000).toString(),
+        q.all(promises).then(function(ingredients) {
+              var recipe = new Recipe({
+                name: _.random(90000000000000).toString(),
                 ingredients: ingredients,
                 url: '',
                 image: '',
@@ -179,17 +193,24 @@ module.exports = function (grunt) {
                 selectionToken: Math.random()
               });
 
-          recipePromises.push(recipeDeferred.promise);
-
           recipe.save(function(err) {
-            if (err) {
-              recipeDeferred.resolve();
+            if (!err) {
+              recipeDeferred.resolve(recipe);
+            } else {
+              recipeDeferred.reject(err);
             }
           });
         });
-
       });
-    });
+
+      q.all(recipePromises).then(function(recipes) {
+        console.log('Success!');
+        done();
+      }, function(err) {
+        console.error('Failure: ' + err);
+        done();
+      });
+    };
   });
 
 
