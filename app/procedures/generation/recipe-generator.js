@@ -1,9 +1,7 @@
 var recipeProvider = require('../../providers/recipe-provider'),
     parser = require('./ingredient-parser'),
     q = require('q'),
-    sampleSize = 100,
-    sampleCount = 100,
-    sampleMultiplier = 10;
+    sampleSize = 1000;
 
 var config = {
   maxSimilarity: 20
@@ -18,10 +16,15 @@ var distance = function(r1, r2) {
   var tuples = _.zip(r1.vector, r2.vector);
   var raw = _.reduce(tuples, function(memo, item) { return memo + Math.abs(item[0] - item[1]); }, 0);
   var transformed = derivedSigmoid(raw);
+
+  for (var i = 0; i < tuples.length; i++) {
+    //transformed += (tuples[i][0] + tuples[i][1]) / 1000;
+  }
+
   return transformed;
 };
 
-var generate = function(amount, similarity) {
+var generate = function(amount, similarity, desired) {
   similarity = parseFloat(similarity);
   config.maxSimilarity = (100 - similarity) / 4;
 
@@ -51,7 +54,7 @@ var generate = function(amount, similarity) {
       return dist;
     };
 
-    for (var iter = 0; iter < 50; iter++) {
+    for (var iter = 0; iter < 30; iter++) {
       for (var r = 0; r < current.length; r++) {
         var candidate = _.max(recipes, function(recip) { return sumDistance(recip, r); });
         current[r] = candidate;
