@@ -3,102 +3,80 @@ var recipeProvider = require('../../providers/recipe-provider'),
     q = require('q'),
     sampleSize = 100,
     sampleCount = 100,
-    sampleMultiplier = 1000;
+    sampleMultiplier = 10;
 
 var config = {
-  diffPenalty: 100,
-  lengthPenalty: 100
+  maxSimilarity: 20
 };
 
-var ingredDist = function(i1, i2) {
-  var dist = 0.0;
-  for (var i = 0; i < Math.min(i1.length, i2.length); i++) {
-    var first = i1[i], second = i2[i];
-    if (first._id.valueOf() == second._id.valueOf()) {
-      dist += Math.abs(first.amount - second.amount);
-    } else {
-      dist += (first.amount + second.amount) * config.diffPenalty;
-    }
-  }
-
-  return dist;
+var derivedSigmoid = function(x) {
+  x = (x - config.maxSimilarity) / 100;
+  return 4 * Math.exp(x) / ((1 + Math.exp(x)) * (1 + Math.exp(x)));
 };
 
-var sampleError = function(recipes) {
-  var cumulativeError = 0.0;
-  for (var i = 1; i < sampleCount/2; i++) {
-    var sample = _.sample(recipes, 2);
-    var d = distance(sample[0], sample[1]);
-    cumulativeError += d;
-  }
-  console.log(cumulativeError);
-  return cumulativeError / (sampleCount / 2);
-};
-
-var distance = function(r1, r2, sampleCount) {
-  sampleCount = (sampleCount || 20);
-  var penalty = r1._id.valueOf() == r2._id.valueOf() ? 100 : 0;
-  var lengthDiff = Math.abs(r1.ingredients.length - r2.ingredients.length);
-  var editSize = Math.min(r1.ingredients.length, r2.ingredients.length);
-  var larger = r1.ingredients.length > r2.ingredients.length ? r1 : r2;
-  var smaller = r1.ingredients.length <= r2.ingredients.length ? r1 : r2;
-  var samples = [];
-
-  for (var i = 0; i < sampleCount/2; i++) {
-    samples.push(_.sample(larger.ingredients, editSize));
-  }
-
-  var numerator = 0.0;
-  _.each(samples, function(sample) {
-    var d = ingredDist(sample, smaller.ingredients);
-    numerator += d;
-  });
-
-  return lengthDiff * config.lengthPenalty + numerator / samples.length + penalty;
-};
-
-var choosePermute = function(amount, recipes) {
-  var permutations = [];
-
-  function inner(arr, index) {
-    if (index >= amount) {
-      permutations.push(arr);
-      return;
-    }
-
-    for (var r = 0; r < recipes.length; r++) {
-      if (index < amount) {
-        var arr2 = arr.concat([recipes[r]]);
-        inner(arr2, index + 1);
-      }
-    }
-
-    return;
-  }
-
-  inner([], 0);
-
-  return permutations;
+var distance = function(r1, r2) {
+  var tuples = _.zip(r1.vector, r2.vector);
+  var raw = _.reduce(tuples, function(memo, item) { return memo + Math.abs(item[0] - item[1]); }, 0);
+  var transformed = derivedSigmoid(raw);
+  return transformed;
 };
 
 var generate = function(amount, similarity) {
   similarity = parseFloat(similarity);
-  config.diffPenalty = similarity;
-  config.lengthPenalty = similarity;
+  config.maxSimilarity = (100 - similarity) / 4;
 
   var recipeResult = recipeProvider.randomly(sampleSize);
   var done = recipeResult.then(function(recipes) {
-    var current = _.times(sampleCount * sampleMultiplier, function() {
-      return _.times(amount, function() {
-        return _.sample(recipes, 1)[0];
+    var current = _.times(amount, function() {
+      return _.sample(recipes, 1)[0];
+    }), error = 0;
+
+    // calculate the total pairwise error for the current set
+    _.each(current, function(item) {
+      _.each(current, function(item2) {
+        error += distance(item, item2);
       });
     });
 
-    return _.min(current, sampleError);
+    error /= 2;
+
+    var sumDistance = function(r, index) {
+      var dist = 0;
+      for (var i = 0; i < current.length; i++) {
+        if (i === index) continue;
+        var delta = distance(r, current[i]);
+        dist += delta;
+      }
+
+      return dist;
+    };
+
+    for (var iter = 0; iter < 50; iter++) {
+      for (var r = 0; r < current.length; r++) {
+        var candidate = _.max(recipes, function(recip) { return sumDistance(recip, r); });
+        current[r] = candidate;
+      }
+    }
+
+    error = 0;
+    // calculate the total pairwise error for the current set
+    _.each(current, function(item) {
+      _.each(current, function(item2) {
+        error += distance(item, item2);
+      });
+    });
+
+    error /= 2;
+
+    return current;
   });
   return done;
 };
 
 module.exports = {
-  generate: generate
+  generate: generate,
+
+  _test: {
+    distance: distance
+  }
 };
