@@ -1,6 +1,6 @@
 angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $modal, $http) {
     $scope.items = [];
-    $scope.itemLimit = 12;
+    //$scope.itemLimit = 12;
     $scope.users = $scope.items;
     $scope.ingredient_list = [];
     $scope.ingredients = [];
@@ -13,6 +13,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         if ($scope.items) {
             if ($scope.ingredients.indexOf($scope.items) == -1 && $scope.ingredient_list.indexOf($scope.items) !== -1) {
                 $scope.ingredients.push($scope.items);
+                $scope.ingredient=$scope.ingredients[0];
                 $scope.items = '';
             }
             else {
@@ -29,6 +30,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     };
 
     $scope.remove = function(item) {
+        console.log(item);
         var index = $scope.ingredients.indexOf(item);
         $scope.ingredients.splice(index, 1);
     };
@@ -47,7 +49,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         var modalInstance = $modal.open({
             templateUrl: 'reset.html',
             controller: 'ModalInstanceCtrl',
-            size: size,
+            size: size, scope:$scope,
             resolve: {
                 ingredients: function () {
                     return $scope.ingredients;
@@ -66,7 +68,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         var modalInstance = $modal.open({
             templateUrl: 'delete.html',
             controller: 'ModalInstanceCtrl',
-            size: size,
+            size: size, scope:$scope,
             resolve: {
                 ingredients: function () {
                     return $scope.ingredients;
@@ -75,7 +77,7 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
         });
 
         modalInstance.result.then(function (selectedItem) {
-            $scope.remove("ingredient");
+            $scope.remove(selectedItem);
         }, function () {
             //$log.info('Modal dismissed at: ' + new Date());
         });
