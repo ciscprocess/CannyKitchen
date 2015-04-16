@@ -53,7 +53,10 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
             resolve: {
                 ingredients: function () {
                     return $scope.ingredients;
-                }
+                },
+              selected: function() {
+                return $scope.ingredient;
+              }
             }
         });
 
@@ -72,12 +75,16 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
             resolve: {
                 ingredients: function () {
                     return $scope.ingredients;
-                }
+                },
+              selected: function() {
+                return $scope.ingredient;
+              }
             }
         });
 
         modalInstance.result.then(function (selectedItem) {
             $scope.remove(selectedItem);
+            $scope.ingredient = $scope.ingredients[0];
         }, function () {
             //$log.info('Modal dismissed at: ' + new Date());
         });
@@ -91,6 +98,9 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
             resolve: {
                 ingredients: function () {
                     return $scope.ingredients;
+                },
+                selected: function() {
+                  return $scope.ingredient;
                 }
             }
         });
@@ -103,10 +113,10 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     };
 });
 
-angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, ingredients) {
+angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, ingredients, selected) {
     $scope.ingredients = ingredients;
     $scope.ok = function () {
-        $modalInstance.close();
+        $modalInstance.close(selected);
     };
     $scope.cancel = function () {
         $modalInstance.dismiss('cancel');

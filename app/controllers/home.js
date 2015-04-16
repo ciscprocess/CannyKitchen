@@ -44,3 +44,10 @@ router.get('/about', function(req, res) {
     title: 'About'
   });
 });
+
+router.get('/link', function(req, res) {
+  sess = req.session;
+  res.render('link', {
+    title: 'Links'
+  });
+});
