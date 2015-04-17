@@ -16,6 +16,7 @@
         <script src="/components/angular-bootstrap/ui-bootstrap.min.js"></script>
         <script src="/components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
         <script src="/recipeViewerApp/config.js"></script>
+        <script src="/recipeViewerApp/MainViewController.js"></script>
         <script src="/recipeViewerApp/recipeViewer/RecipeViewerController.js"></script>
         <script src="/recipeViewerApp/ingredientList/IngredientListController.js"></script>
 	</head>

@@ -111,6 +111,11 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
             //$log.info('Modal dismissed at: ' + new Date());
         });
     };
+
+  $scope.$watchCollection('ingredients', function(newValue) {
+    $scope.selectedIngredients.length = 0;
+    Array.prototype.push.apply($scope.selectedIngredients, newValue);
+  });
 });
 
 angular.module('recipeViewerApp').controller('ModalInstanceCtrl', function ($scope, $modalInstance, ingredients, selected) {

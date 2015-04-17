@@ -32,7 +32,7 @@
     </nav>
 
     {% block pageContent %}
-        <div class="container main-container" ng-app="recipeViewerApp">
+        <div class="container main-container" ng-controller="MainViewController" ng-app="recipeViewerApp">
             <div ng-include="'/recipeViewerApp/ingredientList/IngredientListTemplate.html'"></div>
             <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
 
