@@ -18,7 +18,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
-                    <li><a href="/link">Links</a></li>
+                    <li><a href="/links">Links</a></li>
                     {% if name %}
                         <li><a href="/savedmeals">My Meal Plans</a></li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ name }} <span class="caret"></span></a>

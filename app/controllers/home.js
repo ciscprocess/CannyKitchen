@@ -52,3 +52,11 @@ router.get('/contact', function(req, res) {
     title: 'Contact Us'
   });
 });
+
+router.get('/links', function(req, res) {
+  sess= req.session;
+  res.render('link', {
+    name: sess.username,
+    title: 'Links'
+  });
+});
