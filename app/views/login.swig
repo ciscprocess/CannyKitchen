@@ -13,7 +13,7 @@
                 <div class="panel-body">
                     {% if alert == 'yes' %}
                         <div class="alert alert-danger">
-                            <strong>Email/password is incorrect!</strong>
+                            <strong>Username/password is incorrect!</strong>
                         </div>
                     {% endif %}
 

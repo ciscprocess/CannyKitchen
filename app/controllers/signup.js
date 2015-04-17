@@ -1,8 +1,8 @@
 var express = require('express'),
 	router = express.Router(),
 	mongoose = require('mongoose'),
-	User = mongoose.model('User');
-	/*bcrypt = require('bcrypt');*/
+	User = mongoose.model('User'),
+	bcrypt = require('bcrypt');
 var sess;
 
 module.exports = function (app) {
@@ -16,9 +16,14 @@ router.post('/signup', function (req, res) {
   	var username = req.body.username;
   	var pw = req.body.password;
   	var cpw = req.body.cfmpassword;
-  	User.findOne({'email' : email}, function (err, doc) {
+    User.findOne({$or:[{'username' : username}, {'email' : email}]}, function (err, doc) {
+  	// User.findOne({'email' : email}, function (err, doc) {
     	if (doc) {
-      		res.render('signup', {alert: "yes", msg: "Email already taken."});
+        if (doc.email === email) {
+          res.render('signup', {alert: "yes", msg: "Email already taken."});
+        } else {
+          res.render('signup', {alert: "yes", msg: "Username already taken."});
+        }
     	} else if (pw != cpw) {
       		res.render('signup', {alert: "yes", msg: "Passwords do not match."});
     	} else {
