@@ -44,3 +44,19 @@ router.get('/about', function(req, res) {
     title: 'About'
   });
 });
+
+router.get('/contact', function(req, res) {
+  sess = req.session;
+  res.render('contact', {
+    name: sess.username,
+    title: 'Contact Us'
+  });
+});
+
+router.get('/links', function(req, res) {
+  sess= req.session;
+  res.render('link', {
+    name: sess.username,
+    title: 'Links'
+  });
+});

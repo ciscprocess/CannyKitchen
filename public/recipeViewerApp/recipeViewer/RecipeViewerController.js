@@ -56,12 +56,13 @@ angular.module('recipeViewerApp').controller('RecipeViewerController', function(
       $scope.meals = data.mealplan;
     });
 
-  $scope.deleteMeal = function(index, meal) {
+  $scope.deleteMeal = function(meal,mealid) {
     // alert(meal);
+    // $scope.meals.splice($scope.meals.indexOf(idx), 1);
 
-    $http.post('/delete-meals', {mealplan: meal}).
+    $http.post('/delete-meals', {mealplan: mealid}).
       success(function(data) {
-        $scope.meals.splice(index, 1);
+        $scope.meals.splice($scope.meals.indexOf(meal), 1);
       });
   };
 
