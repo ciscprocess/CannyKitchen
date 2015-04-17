@@ -92,18 +92,29 @@ var requestRandom = function(howMany) {
   });
 };
 
-var getIngredientsVectors = function(recipes) {
-  Recipe.find({
-    'ingredients.0': { $exists: true }
-  }).sort({
-    selectionToken: 1
-  }).exec(function(error, recipes) {
+var getIngredientsVector = function(recipe) {
+  var deferred = q.defer();
+  IngredientType.find().sort({ _id: 1 }).exec(function(err, ingredientTypes) {
+    var vector = [];
+    _.each(ingredientTypes, function(ingredientType, index) {
+      var incident = _.find(recipe.ingredients, function(val) {
+        return val.name == ingredientType.normalizedName;
+      });
+      if (incident) {
+        vector[index] = incident.amount;
+      } else {
+        vector[index] = 0;
+      }
+    });
 
+    deferred.resolve(vector);
   });
+
+  return deferred.promise;
 };
 
 module.exports = {
   byName: requestByName,
   randomly: requestRandom,
-  ingredientsVector: getIngredientsVectors
+  ingredientsVector: getIngredientsVector
 };
