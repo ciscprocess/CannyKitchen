@@ -8,17 +8,23 @@
         <div class="ingredient-list" ng-controller="IngredientListController">
             <p>Search for your ingredients:</p>
 
-            <input ng-keypress="enter($event)" id="searchbox" placeholder="Search" list="list" name="search" ng-model="items"/>
+            <div class="row">
+                <input ng-keypress="enter($event)" style="width: 150px;" class="search-style-text" placeholder="Search" list="list" name="search" ng-model="items"/>
+                <input type="number" ng-model="amount" class="search-style-number" min="1" style="width: 60px;" />
+                <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
+            </div>
+
             <datalist id="list" ng-if="ingredient_list">
                 <option ng-repeat="i in ingredient_list" value="{{ i }}">
             </datalist>
 
-            <a class="btn btn-default button-custom" ng-click="addQuery()">Submit</a>
+
             <p>  </p>
-            <p>Ingredient Lists:</p>
-            <!--<pre>Ingredients= {{ ingredients }} </pre>-->
-            <select ng-model="ingredient" ng-options="i for i in ingredients" size=10 STYLE="width: 300px">
+            <p>Ingredients Lists:</p>
+            <select ng-model="ingredient" size=10 STYLE="width: 300px">
+                <option ng-repeat="i in ingredients">{{ i.amount }} units of {{ i.name }}</option>
             </select>
+
 
             <p>Selected Ingredient: {{ ingredient }} </p>
 

@@ -5,6 +5,8 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     $scope.ingredient_list = [];
     $scope.ingredients = [];
     $scope.text = 'item';
+    $scope.amount = 1;
+
     $scope.selected = {
       ingredients: $scope.ingredients[0]
     };
@@ -12,8 +14,9 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
     $scope.addQuery = function(e) {
         if ($scope.items) {
             if ($scope.ingredients.indexOf($scope.items) == -1 && $scope.ingredient_list.indexOf($scope.items) !== -1) {
-                $scope.ingredients.push($scope.items);
-                $scope.ingredient=$scope.ingredients[0];
+              $scope.ingredients.push({name: $scope.items, amount: $scope.amount});
+
+              $scope.ingredient=$scope.ingredients[0];
                 $scope.items = '';
             }
             else {
