@@ -11,7 +11,42 @@ models.forEach(function (model) {
 });
 
 var assert = require("assert"),
-    IngredientParser = require('../app/procedures/generation/ingredient-parser');
+    IngredientParser = require('../app/procedures/generation/ingredient-parser'),
+    RecipeGenerator = require('../app/procedures/generation/recipe-generator');
+
+describe('RecipeGenerator', function() {
+  describe('#distance()', function() {
+    it('should correctly find the distance between two recipes', function(done) {
+      var r1 = {
+        vector: [0, 2, 4, 0]
+          }, r2 = {
+        vector: [1, 2, 0, 2]
+      };
+
+      var dist = RecipeGenerator._test.distance(r1, r2);
+      if (dist === 7)
+        done();
+      else
+        done(new Error());
+
+    });
+
+    it('should correctly find the distance between two recipes', function(done) {
+      var r1 = {
+        vector: [1, 2, 0, 1]
+      }, r2 = {
+        vector: [1, 2, 0, 1]
+      };
+
+      var dist = RecipeGenerator._test.distance(r1, r2);
+      if (dist === 0)
+        done();
+      else
+        done(new Error());
+
+    });
+  });
+});
 
 describe('IngredientParser', function(){
   describe('#parseType()', function(){
@@ -39,8 +74,6 @@ describe('IngredientParser', function(){
             done();
           }
         });
-
-
       });
 
     });
