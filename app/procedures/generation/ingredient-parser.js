@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
     inflection = require('inflection'),
     WordPOS = require('wordpos'),
     wordpos = new WordPOS(),
-    q = require('Q');
+    q = require('q');
 
 
 var units = ['pound',
