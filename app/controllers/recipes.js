@@ -6,7 +6,7 @@ var express = require('express'),
     Recipe = mongoose.model('Recipe'),
     IngredientType = mongoose.model('IngredientType'),
     moment = require('moment'),
-    q = require('Q');
+    q = require('q');
 
 module.exports = function (app) {
   app.use('/', router);

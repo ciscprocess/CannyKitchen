@@ -8,7 +8,7 @@ var request = require('request'),
     config = require('./config/config'),
     glob = require('glob'),
     fs = require('fs'),
-    q = require('Q');
+    q = require('q');
 
 
 module.exports = function (grunt) {
