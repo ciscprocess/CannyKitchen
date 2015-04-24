@@ -14,7 +14,7 @@ var config = {
         urlTemplate: 'http://www.supermarketapi.com/api.asmx/%s?APIKEY=%s'
       }
     },
-    port: 3000,
+    port: 5000,
     //db:'mongodb://localhost/CannyKitchen-development'
      db: 'mongodb://cannykitchen:cs4911@ds041581.mongolab.com:41581/cannykitchen'
   },
