@@ -36,9 +36,9 @@
     </nav>
 
     {% block pageContent %}
-        <div class="container main-container" ng-controller="MainViewController" ng-app="recipeViewerApp">
-            <div ng-include="'/recipeViewerApp/ingredientList/IngredientListTemplate.html'"></div>
-            <div ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
+        <div class="main-container row" ng-controller="MainViewController" ng-app="recipeViewerApp">
+            <div class="col-md-3" style="min-width: 220px; max-width: 400px;" ng-include="'/recipeViewerApp/ingredientList/IngredientListTemplate.html'"></div>
+            <div class="col-md-7" ng-include="'/recipeViewerApp/recipeViewer/RecipeViewerTemplate.html'"></div>
 
         </div>
     {% endblock %}

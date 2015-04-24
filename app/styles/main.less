@@ -1,0 +1,44 @@
+@import "../../public/components/bootstrap/less/bootstrap.less";
+
+@icon-font-path: "../components/bootstrap/fonts/";
+body {
+  padding-top: 50px;
+  font: 14px "Trebuchet MS", Helvetica, Arial, sans-serif;
+  //background-color: #003d7a;
+  background-image: url("/image/kitchen.jpg");
+  background-repeat: no-repeat;
+}
+
+.border-radius(@radius){
+  .border-top-radius(@radius);
+  .border-right-radius(@radius);
+  .border-bottom-radius(@radius);
+  .border-left-radius(@radius);
+}
+
+a {
+  color: #0085a1;
+}
+
+a:hover, a:focus {
+  color: #0085a1;
+}
+
+.error-container {
+  h1 {
+    color: #fff;
+  }
+
+  h2 {
+    color: #DDDDDD;
+  }
+
+  .glyphicon {
+    font-size: 50px;
+    color: red;
+  }
+  background-color: #0b97c4;
+  padding-left: 10px;
+  padding-right: 10px;
+  .border-radius( 5px );
+}
