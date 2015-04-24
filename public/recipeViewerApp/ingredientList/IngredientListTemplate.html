@@ -21,8 +21,7 @@
 
             <p>  </p>
             <p>Ingredients Lists:</p>
-            <select ng-model="ingredient" size=10 class="selected-ingredients">
-                <option ng-repeat="i in ingredients">{{ i.amount }} units of {{ i.name }}</option>
+            <select ng-model="ingredient" ng-options="item as label(item) for item in ingredients" size=10 class="selected-ingredients">
             </select>
 
 

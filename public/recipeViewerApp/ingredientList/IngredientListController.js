@@ -1,4 +1,5 @@
 angular.module('recipeViewerApp').controller('IngredientListController', function($scope, $modal, $http) {
+    var count = 0;
     $scope.items = [];
     //$scope.itemLimit = 12;
     $scope.users = $scope.items;
@@ -11,10 +12,18 @@ angular.module('recipeViewerApp').controller('IngredientListController', functio
       ingredients: $scope.ingredients[0]
     };
 
+    $scope.label = function(item) {
+      if (item.amount == 1) {
+        return item.amount + ' unit of ' + item.name;
+      } else {
+        return item.amount + ' units of ' + item.name;
+      }
+    };
+
     $scope.addQuery = function(e) {
         if ($scope.items) {
             if ($scope.ingredients.indexOf($scope.items) == -1 && $scope.ingredient_list.indexOf($scope.items) !== -1) {
-              $scope.ingredients.push({name: $scope.items, amount: $scope.amount});
+              $scope.ingredients.push({name: $scope.items, amount: $scope.amount, id: count++});
 
               $scope.ingredient=$scope.ingredients[0];
                 $scope.items = '';
