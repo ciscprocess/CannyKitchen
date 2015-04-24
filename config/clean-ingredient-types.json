@@ -1,0 +1,372 @@
+{ "_id" : { "$oid" : "54f5ce62ca504f744742de30" }, "normalizedName" : "biscuit", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de32" }, "normalizedName" : "salt", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de4b" }, "normalizedName" : "salsa", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de62" }, "normalizedName" : "sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de65" }, "normalizedName" : "blackberry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de67" }, "normalizedName" : "cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de69" }, "normalizedName" : "cheddar", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de6d" }, "normalizedName" : "mayonnaise", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de74" }, "normalizedName" : "spinach", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de78" }, "normalizedName" : "cumin", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de92" }, "normalizedName" : "cayenne", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de93" }, "normalizedName" : "carrot", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742de94" }, "normalizedName" : "cardamom", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742dec2" }, "normalizedName" : "almond", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742dec3" }, "normalizedName" : "berry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742dec4" }, "normalizedName" : "milk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742ded2" }, "normalizedName" : "strawberry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742ded8" }, "normalizedName" : "water", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742dee4" }, "normalizedName" : "butter", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742deee" }, "normalizedName" : "buttermilk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df0b" }, "normalizedName" : "kamut", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df0c" }, "normalizedName" : "fetum", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df0d" }, "normalizedName" : "fettuccine", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df0e" }, "normalizedName" : "walnut", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df10" }, "normalizedName" : "scallion", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df13" }, "normalizedName" : "scallop", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df14" }, "normalizedName" : "toast", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df29" }, "normalizedName" : "chop", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df2b" }, "normalizedName" : "apple", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df2c" }, "normalizedName" : "apple juice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce63ca504f744742df2d" }, "normalizedName" : "blueberry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df3d" }, "normalizedName" : "pumpkin", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df3e" }, "normalizedName" : "cornstarch", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df40" }, "normalizedName" : "corn", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df41" }, "normalizedName" : "cornmeal", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df43" }, "normalizedName" : "coriander", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df49" }, "normalizedName" : "black olive", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df68" }, "normalizedName" : "almond extract", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df7e" }, "normalizedName" : "lettuce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df7f" }, "normalizedName" : "kale", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df82" }, "normalizedName" : "mascarpone", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df84" }, "normalizedName" : "red candy melt", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df85" }, "normalizedName" : "chickpea", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df86" }, "normalizedName" : "chive", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df87" }, "normalizedName" : "chilli", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df8a" }, "normalizedName" : "chocolate chip", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df8e" }, "normalizedName" : "cilantro", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742df95" }, "normalizedName" : "tomato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfb3" }, "normalizedName" : "cocoa powder", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfb4" }, "normalizedName" : "chili powder", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfb7" }, "normalizedName" : "red chilli powder", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfb8" }, "normalizedName" : "caper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfbc" }, "normalizedName" : "kahlua", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfbe" }, "normalizedName" : "celery", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfc0" }, "normalizedName" : "cream", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfcd" }, "normalizedName" : "mirin", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfce" }, "normalizedName" : "shallot", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfd7" }, "normalizedName" : "garlic", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfdc" }, "normalizedName" : "lemon", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfe5" }, "normalizedName" : "crust", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfe7" }, "normalizedName" : "orzo", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfe8" }, "normalizedName" : "flour", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742dfec" }, "normalizedName" : "all-purpose flour", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e00b" }, "normalizedName" : "vodka", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e00c" }, "normalizedName" : "basil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e013" }, "normalizedName" : "parsley", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e019" }, "normalizedName" : "parsnip", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e01d" }, "normalizedName" : "radish", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e01f" }, "normalizedName" : "potato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e023" }, "normalizedName" : "mashed potato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e025" }, "normalizedName" : "cashew", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e029" }, "normalizedName" : "cinnamon", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e031" }, "normalizedName" : "steak", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e032" }, "normalizedName" : "cheese (provolone)", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e037" }, "normalizedName" : "beetroot", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce64ca504f744742e038" }, "normalizedName" : "beet", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e03b" }, "normalizedName" : "cake", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e03d" }, "normalizedName" : "pecan", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e040" }, "normalizedName" : "mushroom", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e041" }, "normalizedName" : "mustard", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e043" }, "normalizedName" : "button mushroom", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e046" }, "normalizedName" : "dijon mustard", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e04f" }, "normalizedName" : "pork", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e050" }, "normalizedName" : "molasses", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e054" }, "normalizedName" : "jalapeño", "aliases" : [ "jalapeno" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e05a" }, "normalizedName" : "salt and pepper", "aliases" : [ "salt pepper" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e076" }, "normalizedName" : "black pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e079" }, "normalizedName" : "black peppercorn", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e07b" }, "normalizedName" : "cayenne pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e080" }, "normalizedName" : "diced pepperoni", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e081" }, "normalizedName" : "white peppercorn", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e083" }, "normalizedName" : "harissa", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e084" }, "normalizedName" : "masa harina", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e085" }, "normalizedName" : "peach", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e086" }, "normalizedName" : "pear", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e087" }, "normalizedName" : "buttered pea", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e088" }, "normalizedName" : "nutella", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e08e" }, "normalizedName" : "nut", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e091" }, "normalizedName" : "shrimp", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e09b" }, "normalizedName" : "pineapple", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e09d" }, "normalizedName" : "rhubarb", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e09e" }, "normalizedName" : "allspice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0a1" }, "normalizedName" : "chocolate", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0a2" }, "normalizedName" : "bacon", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0a4" }, "normalizedName" : "pepper bacon", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0a5" }, "normalizedName" : "paprika", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0ae" }, "normalizedName" : "zest", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0af" }, "normalizedName" : "juice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0b2" }, "normalizedName" : "raspberry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0b4" }, "normalizedName" : "red pepper flake", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0b5" }, "normalizedName" : "brie", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0b7" }, "normalizedName" : "raisin", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0c2" }, "normalizedName" : "celery stalk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0c3" }, "normalizedName" : "saffron", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0c5" }, "normalizedName" : "pancake", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0c6" }, "normalizedName" : "panettone", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0c7" }, "normalizedName" : "pistachio", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0cb" }, "normalizedName" : "tofu", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0cd" }, "normalizedName" : "onion", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0da" }, "normalizedName" : "red onion", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0f9" }, "normalizedName" : "green onion", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e0fa" }, "normalizedName" : "yellow onion", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e108" }, "normalizedName" : "leaf", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e10d" }, "normalizedName" : "sriracha", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e10e" }, "normalizedName" : "cranberry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e115" }, "normalizedName" : "cucumber", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e117" }, "normalizedName" : "ketchup", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e118" }, "normalizedName" : "tomato ketchup", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e119" }, "normalizedName" : "gravy", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e11a" }, "normalizedName" : "scone", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e11c" }, "normalizedName" : "ice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e11d" }, "normalizedName" : "leek", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e121" }, "normalizedName" : "lime", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e12e" }, "normalizedName" : "banana", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e12f" }, "normalizedName" : "tamarind", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e130" }, "normalizedName" : "marinade", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e131" }, "normalizedName" : "grand marnier", "aliases" : [ "marnier" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e132" }, "normalizedName" : "marshmallow", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e134" }, "normalizedName" : "oil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e135" }, "normalizedName" : "sunflower oil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e137" }, "normalizedName" : "walnut oil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e138" }, "normalizedName" : "coconut oil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e13b" }, "normalizedName" : "canola oil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e179" }, "normalizedName" : "sesame oil", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e17b" }, "normalizedName" : "turmeric", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e184" }, "normalizedName" : "cannon lamb", "aliases" : [ "Cannon of Lamb" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e185" }, "normalizedName" : "mace", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e186" }, "normalizedName" : "blade mace", "aliases" : [ "mace blade" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e187" }, "normalizedName" : "currant", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e189" }, "normalizedName" : "clementine", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e18a" }, "normalizedName" : "slaw", "aliases" : [ "coleslaw" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce65ca504f744742e18e" }, "normalizedName" : "kiwi fruit", "aliases" : [ "kiwi" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1b8" }, "normalizedName" : "worcestershire sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1bd" }, "normalizedName" : "adobo sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1be" }, "normalizedName" : "tomato sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1c2" }, "normalizedName" : "soy sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1c5" }, "normalizedName" : "marinara sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1c6" }, "normalizedName" : "fish sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1c7" }, "normalizedName" : "zucchini", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1ca" }, "normalizedName" : "pineapple chunk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1cc" }, "normalizedName" : "sea salt", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1ef" }, "normalizedName" : "maldon sea salt", "aliases" : [ "maldon salt" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1f2" }, "normalizedName" : "salad", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1f4" }, "normalizedName" : "breadcrumb", "aliases" : [ "bread crumb", "bread crumbs" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1f5" }, "normalizedName" : "chicken breast", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1f7" }, "normalizedName" : "kaiser roll bread", "aliases" : [ "kaiser roll" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1f8" }, "normalizedName" : "cinnamon raisin bread", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1f9" }, "normalizedName" : "panko breadcrumb", "aliases" : [ "panko bread crumb" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1fb" }, "normalizedName" : "black bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e1ff" }, "normalizedName" : "bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e202" }, "normalizedName" : "cannellini bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e203" }, "normalizedName" : "kidney bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e204" }, "normalizedName" : "garbanzo bean", "aliases" : [ "chickpea" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e205" }, "normalizedName" : "coffee bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e206" }, "normalizedName" : "refried bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e207" }, "normalizedName" : "blackberry syrup", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e208" }, "normalizedName" : "syrup", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e209" }, "normalizedName" : "maple syrup", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e20d" }, "normalizedName" : "cream cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e213" }, "normalizedName" : "parmesan cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e214" }, "normalizedName" : "grated parmesan cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e21b" }, "normalizedName" : "maraschino", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e21c" }, "normalizedName" : "poppy seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e21e" }, "normalizedName" : "cumin seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e21f" }, "normalizedName" : "ajowan (carom seeds)", "aliases" : [ "ajwain", "carom" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e220" }, "normalizedName" : "sunflower seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e225" }, "normalizedName" : "coriander seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e227" }, "normalizedName" : "celery seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e228" }, "normalizedName" : "black mustard seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e22a" }, "normalizedName" : "mustard seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e22c" }, "normalizedName" : "sesame seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e230" }, "normalizedName" : "fennel seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e231" }, "normalizedName" : "hemp seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e239" }, "normalizedName" : "butterscotch chip", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e23b" }, "normalizedName" : "fruit", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e244" }, "normalizedName" : "celery root", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e246" }, "normalizedName" : "spice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e249" }, "normalizedName" : "baby spinach", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e258" }, "normalizedName" : "root", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e25d" }, "normalizedName" : "cardamom pod", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e25e" }, "normalizedName" : "pureed strawberry", "aliases" : [ "strawberry puree" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e28d" }, "normalizedName" : "strawberry jam", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e28e" }, "normalizedName" : "strawberry custard", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e28f" }, "normalizedName" : "corn tortilla", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e290" }, "normalizedName" : "flour tortilla", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e292" }, "normalizedName" : "rice krispy", "aliases" : [ "rice krispies" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2a7" }, "normalizedName" : "white wine", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2a8" }, "normalizedName" : "cranberry preserves", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2a9" }, "normalizedName" : "preserves", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2aa" }, "normalizedName" : "sprinkle", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2ab" }, "normalizedName" : "brussel sprout", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2ac" }, "normalizedName" : "valentine sprinkle", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2ae" }, "normalizedName" : "stick butter", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2c8" }, "normalizedName" : "hotel butter", "aliases" : [ "maitre d'hotel butter" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2e8" }, "normalizedName" : "slivered almond", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2e9" }, "normalizedName" : "pepita almond", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2f2" }, "normalizedName" : "pork chop", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e2f9" }, "normalizedName" : "wheat tortilla", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e31f" }, "normalizedName" : "escarole", "aliases" : [ "head escarole" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e328" }, "normalizedName" : "broth", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e32a" }, "normalizedName" : "beef broth", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e32b" }, "normalizedName" : "mushroom broth", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e32c" }, "normalizedName" : "hash", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e32f" }, "normalizedName" : "coconut", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce66ca504f744742e335" }, "normalizedName" : "cocoa", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e340" }, "normalizedName" : "tap water", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e342" }, "normalizedName" : "medjool date", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e343" }, "normalizedName" : "artichoke heart", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e345" }, "normalizedName" : "tomato paste", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e349" }, "normalizedName" : "harissa paste", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e350" }, "normalizedName" : "lemon zest", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e353" }, "normalizedName" : "diced ham", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e354" }, "normalizedName" : "ham", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e356" }, "normalizedName" : "crumb mixture", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e357" }, "normalizedName" : "meat mixture", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e359" }, "normalizedName" : "white rice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e35b" }, "normalizedName" : "red rice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e35c" }, "normalizedName" : "white miso", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e35e" }, "normalizedName" : "cream of tartar", "aliases" : [ "cream tartar" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e35f" }, "normalizedName" : "whipped cream", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e36d" }, "normalizedName" : "ice cream", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e36e" }, "normalizedName" : "marshmallow creme", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e372" }, "normalizedName" : "chilled cream", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e377" }, "normalizedName" : "sake", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e378" }, "normalizedName" : "green chilli", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e37a" }, "normalizedName" : "potato chip", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e37b" }, "normalizedName" : "cinnamon chip", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e386" }, "normalizedName" : "red chilli", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e389" }, "normalizedName" : "lemon juice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e393" }, "normalizedName" : "pineapple juice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e39a" }, "normalizedName" : "lime juice", "aliases" : [ "juice lime" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e39b" }, "normalizedName" : "diced tomato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e39e" }, "normalizedName" : "roma tomato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3a0" }, "normalizedName" : "grape tomato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3a9" }, "normalizedName" : "strawberry extract", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3ac" }, "normalizedName" : "condensed milk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3af" }, "normalizedName" : "coconut milk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3b6" }, "normalizedName" : "banana shallot", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3b7" }, "normalizedName" : "manila clam", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3b8" }, "normalizedName" : "gran classico", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3b9" }, "normalizedName" : "beef", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3cb" }, "normalizedName" : "steak (ribeye)", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3cd" }, "normalizedName" : "candy spider", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3d1" }, "normalizedName" : "oat", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3d4" }, "normalizedName" : "garam masala", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3d5" }, "normalizedName" : "beef nacho", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3d6" }, "normalizedName" : "anchovy filet", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3d9" }, "normalizedName" : "crimini mushroom", "aliases" : [ "cremini mushroom", "baby bella" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3dc" }, "normalizedName" : "shiitake mushroom", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3de" }, "normalizedName" : "woodear mushroom", "aliases" : [ "wood ear mushroom" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3e0" }, "normalizedName" : "pepperoni", "aliases" : [ "pepperoni slice" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3e3" }, "normalizedName" : "dr pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3e7" }, "normalizedName" : "pine nut", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3f2" }, "normalizedName" : "yukon potato", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3f4" }, "normalizedName" : "worm", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3f5" }, "normalizedName" : "soba noodle", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3f7" }, "normalizedName" : "endive", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3f9" }, "normalizedName" : "red bell pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e3ff" }, "normalizedName" : "diced bell pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e401" }, "normalizedName" : "pumpkin seed (pepitas)", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e40e" }, "normalizedName" : "pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e412" }, "normalizedName" : "red pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e417" }, "normalizedName" : "chipotle pepper", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e41c" }, "normalizedName" : "meyer lemon", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e420" }, "normalizedName" : "raspberry liqueur", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e422" }, "normalizedName" : "tuaca liqueur", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e426" }, "normalizedName" : "prune", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e428" }, "normalizedName" : "athen fillo shell", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e42d" }, "normalizedName" : "anise", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e430" }, "normalizedName" : "delicata squash", "aliases" : [ "delicatum squash" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e432" }, "normalizedName" : "butternut squash", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e436" }, "normalizedName" : "toffee bar", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e439" }, "normalizedName" : "romaine lettuce", "aliases" : [ "head romaine lettuce", "cos lettuce", "romaine" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e43b" }, "normalizedName" : "bibb lettuce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e43e" }, "normalizedName" : "muffin", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e442" }, "normalizedName" : "bosc pear", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e44a" }, "normalizedName" : "mullet", "aliases" : [ "grey mullet" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e44d" }, "normalizedName" : "curry", "aliases" : [ "curry leaf", "curry leafe" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e44f" }, "normalizedName" : "thyme", "aliases" : [ "thyme leaf", "thyme leafe" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e453" }, "normalizedName" : "pluot", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e459" }, "normalizedName" : "lamb shoulder", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e45b" }, "normalizedName" : "baking soda", "aliases" : [ "bicarbonate soda", "sodium bicarbonate" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e46b" }, "normalizedName" : "broccoli", "aliases" : [ "head broccoli floret" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e46c" }, "normalizedName" : "wheat pastry flour", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e46f" }, "normalizedName" : "tea biscuit", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e473" }, "normalizedName" : "za'atar", "aliases" : [ "zaatar" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e477" }, "normalizedName" : "pajun (pajeon)", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e48d" }, "normalizedName" : "white sandwich roll", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e49f" }, "normalizedName" : "crumbled cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4a0" }, "normalizedName" : "sheep milk cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4a5" }, "normalizedName" : "fontina cheese", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4a9" }, "normalizedName" : "dijon mayonnaise", "aliases" : [ "mayonnaise dijon" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4c2" }, "normalizedName" : "country bread", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4c3" }, "normalizedName" : "rye bread", "aliases" : [ "slice rye bread" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4d0" }, "normalizedName" : "kitchen bouquet", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4d9" }, "normalizedName" : "marinara pizza sauce", "aliases" : [ "jarred marinara pizza sauce" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4e0" }, "normalizedName" : "louisiana-style pepper sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4e5" }, "normalizedName" : "coffee", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4e6" }, "normalizedName" : "espresso", "aliases" : [ "espresso coffee" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4e8" }, "normalizedName" : "yellow mustard seed", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4f4" }, "normalizedName" : "kirby cucumber", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4f6" }, "normalizedName" : "red cookie", "aliases" : [ "red cooky" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4fd" }, "normalizedName" : "baby bok choy", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e4ff" }, "normalizedName" : "choulula hot sauce", "aliases" : [ "choulula" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e512" }, "normalizedName" : "pumpkin puree", "aliases" : [ "pumpkin pur’ee" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e515" }, "normalizedName" : "candy melts", "aliases" : [ "candy melt" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e516" }, "normalizedName" : "cutlet", "aliases" : [ "cutlets" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e51a" }, "normalizedName" : "white wine broth", "aliases" : [ "broth white wine", "white wine sauce" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e524" }, "normalizedName" : "clarified butter", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e525" }, "normalizedName" : "musselman's apple butter", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e529" }, "normalizedName" : "corn husk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e52a" }, "normalizedName" : "corn syrup", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e534" }, "normalizedName" : "cocchi americano", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e535" }, "normalizedName" : "kalamata olive", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce67ca504f744742e536" }, "normalizedName" : "olive", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e53d" }, "normalizedName" : "crème fraîche", "aliases" : [ "crème fraîche cream" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e542" }, "normalizedName" : "duck confit", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e544" }, "normalizedName" : "whiskey", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e54a" }, "normalizedName" : "beef ham", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e54e" }, "normalizedName" : "pesto (basil tomato)", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e551" }, "normalizedName" : "beef bouillon", "aliases" : [ "beef bouillon cube", "cube beef bouillon" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e552" }, "normalizedName" : "porter beer", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e558" }, "normalizedName" : "rice paper wrapper", "aliases" : [ "spring roll wrapper" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e55a" }, "normalizedName" : "almond milk", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e55b" }, "normalizedName" : "pastry", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e55c" }, "normalizedName" : "tahini (sesame seed paste)", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e55d" }, "normalizedName" : "fiorentini pasta", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e561" }, "normalizedName" : "delallo orzo", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e565" }, "normalizedName" : "lollipop stick", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e568" }, "normalizedName" : "yellow pea", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e572" }, "normalizedName" : "semi-sweet chocolate chip", "aliases" : [ "semi chocolate chip", "semisweet chocolate chip" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e590" }, "normalizedName" : "beef flank steak", "aliases" : [ "grass-fed beef flank steak" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e591" }, "normalizedName" : "bread", "aliases" : [ "loaf bread" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e599" }, "normalizedName" : "horseradish mayo", "aliases" : [ "horseradish mayonnaise" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e59a" }, "normalizedName" : "apple (honeycrisp)", "aliases" : [ "honeycrisp" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e59e" }, "normalizedName" : "pimento", "aliases" : [ "jar pimento", "pimiento", "cherry pepper" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5a0" }, "normalizedName" : "red enchilada sauce", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5a8" }, "normalizedName" : "brandy", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5ab" }, "normalizedName" : "cauliflower head", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5b1" }, "normalizedName" : "fermented black bean", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5b8" }, "normalizedName" : "chili con carne", "aliases" : [ "chili carne" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5c1" }, "normalizedName" : "packet yeast", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5ca" }, "normalizedName" : "stew meat", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5cb" }, "normalizedName" : "apricot", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5d0" }, "normalizedName" : "halibut", "aliases" : [ "halibut fillet" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5ee" }, "normalizedName" : "corn starch", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e5f6" }, "normalizedName" : "black rice", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e602" }, "normalizedName" : "white bread", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e60b" }, "normalizedName" : "nutella biscotti", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e619" }, "normalizedName" : "green curry paste", "aliases" : [], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e61c" }, "normalizedName" : "liqueur", "aliases" : [ "liquor" ], "__v" : 0 }
+{ "_id" : { "$oid" : "54f5ce68ca504f744742e621" }, "normalizedName" : "dinner roll", "aliases" : [], "__v" : 0 }

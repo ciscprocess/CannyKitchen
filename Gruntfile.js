@@ -117,7 +117,7 @@ module.exports = function (grunt) {
         Ingredient = connection.model('Ingredient');
 
     // read in the established ingredient types
-    var typesFile = fs.readFileSync('config/juicein.json').toString();
+    var typesFile = fs.readFileSync('config/clean-ingredient-types.json').toString();
 
     // since each line is a JSON object, parse each line separately
     var rawTypes = _.map(typesFile.split('\n'), JSON.parse),
