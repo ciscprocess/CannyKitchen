@@ -14,6 +14,11 @@ As Grunt and Bower depend on the Node Package Manager to be installed, please in
 Upon a fresh checkout, you must perform several tasks. The steps are listed below, in order.
 Open a terminal with root privileges, or 'sudo' (or su -c) each command if on a Unix-based OS.
 
+### Ensure Prerequisites
+Run the following commands if GruntJS and Bower are not installed.
+	npm install -g bower
+	npm install -g grunt
+
 ### Update Node Packages
 
 	npm install
@@ -47,6 +52,9 @@ The application can now be accessed at [localhost](localhost:3000) on port 3000.
 
 ## Contact
 For any questions, feel free to contact [Nathan Korzekwa](mailto:nkorzekwa3@gatech.edu) at [nkorzekwa3@gatech.edu](mailto:nkorzekwa3@gatech.edu) or [Anna Tran](mailto:atran37@gatech.edu) at [atran37@gatech.edu](atran37@gatech.edu).
+
+## Further Documentation
+
 
 ## Contributors
 - Nathan Korzekwa
