@@ -16,6 +16,7 @@ Open a terminal with root privileges, or 'sudo' (or su -c) each command if on a 
 
 ### Ensure Prerequisites
 Run the following commands if GruntJS and Bower are not installed.
+
 	npm install -g bower
 	npm install -g grunt
 
